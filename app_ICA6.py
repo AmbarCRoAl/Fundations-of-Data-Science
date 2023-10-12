@@ -67,7 +67,8 @@ elif model_choice == "RBF-NN":
         y.append(w*e**(-(x[i]-x1)**2/L)+ w*e**(-(x[i]-x2)**2/L))
       return y
     x_data = np.array(selected_data[x_variable])
-    rbf_nn_predictions = RBF_func(x_data, weights, center1, center2, bandwidth)
+    rbf_nn_predictions = np.array(RBF_func(x_data, weights, center1, center2, bandwidth))
+    st.write(str(x_data))
     # Plot the data and RBF-NN predictions
     plt.figure(figsize=(8, 6))
     plt.scatter(selected_data[x_variable], selected_data[y_variable], label="Data Points")
