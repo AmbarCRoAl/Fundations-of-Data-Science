@@ -72,7 +72,7 @@ elif model_choice == "RBF-NN":
     # Plot the data and RBF-NN predictions
     plt.figure(figsize=(8, 6))
     plt.scatter(selected_data[x_variable], selected_data[y_variable], label="Data Points")
-    plt.plot(selected_data[x_variable], rbf_nn_predictions, color='red', label="RBF-NN")
+    plt.scatter(selected_data[x_variable], rbf_nn_predictions, color='red', label="RBF-NN")
     plt.xlabel(x_variable)
     plt.ylabel(y_variable)
     plt.legend()
