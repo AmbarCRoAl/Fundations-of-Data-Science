@@ -10,11 +10,11 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 points = [
     {'x':0.5, 'y':2},
     {'x': 1, 'y':1}]
-df1= pd.DataFrame(points)
-df22=sns.load_dataset("mpg")
-df22=df22.dropna()
-ncols = df22.select_dtypes(include=[np.number]).columns
-df2=df22[ncols]
+custom_data= pd.DataFrame(points)
+df2=sns.load_dataset("mpg")
+mpg_data=df2.dropna()
+ncols = mpg_data.select_dtypes(include=[np.number]).columns
+mpg_data=mpg_data[ncols]
 st.title("Regression Analysis App")
 dataset_choice = st.selectbox("Select a dataset:", ("Custom Dataset", "Seaborn MPG Dataset"))
 # User selects dataset
