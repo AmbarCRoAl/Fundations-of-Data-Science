@@ -21,8 +21,8 @@ dataset_choice = st.selectbox("Select a dataset:", ("Custom Dataset", "Seaborn M
 
 if dataset_choice == "Custom Dataset":
     selected_data = custom_data
-    x_variable = 'X'  # Set the default x-variable for the custom dataset
-    y_variable = 'Y'  # Set the default y-variable for the custom dataset
+    x_variable = custom_data['x']  # Set the default x-variable for the custom dataset
+    y_variable = custom_data['y']  # Set the default y-variable for the custom dataset
 else:
     selected_data = mpg_data
     x_variable = st.selectbox("Select the X-variable:", list(mpg_data.columns))
