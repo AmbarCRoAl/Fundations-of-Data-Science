@@ -5,6 +5,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+from math import e
 
 
 points = [
@@ -63,7 +64,7 @@ elif model_choice == "RBF-NN":
     def RBF_func(x, w, x1, x2, L):
       y = []
       for i in range(len(x)):
-        y.append(w*exp(-(x[i]-x1)**2/L)+ w*exp(-(x[i]-x2)**2/L))
+        y.append(w*e**(-(x[i]-x1)**2/L)+ w*e**(-(x[i]-x2)**2/L))
       return y
     x_data = np.array(selected_data[x_variable])
     rbf_nn_predictions = RBF_func(x_data, weights, center1, center2, bandwidth)
