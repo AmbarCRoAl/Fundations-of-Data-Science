@@ -11,11 +11,11 @@ with st.expander('More information'):
   st.write('The last attribute (income) only tells you weather or not that individual earns more than $50,000 per year, it does not give the absolute value of their income.')
 
 if 'file' not in st.session_state:
-  st.session_state('file')='not done'
+  st.session_state['file'] = 'not done'
 def file_uploaded():
-  st.session_state('file')='done'
+  st.session_state['file']='done'
 file_uploaded = col2.file_uploader('Upload the census file here', on_change=file_uploaded)
-if  st.session_state('file') == 'done':
+if  st.session_state['file'] == 'done':
   col2.sucess('File uploaded sucessfully')
          
   df_census = file_uploaded
