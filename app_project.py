@@ -17,13 +17,12 @@ def file_uploaded():
 file_uploaded = col2.file_uploader('Upload the census file here', on_change=file_uploaded)
 if  st.session_state['file'] == 'done':
   col2.write('File uploaded sucessfully')
-  df_census = file_uploaded
          
   df_census = file_uploaded
-  gain_age = sns.jointplot(y='capital-gain', x='age', data=df_census, kind="reg", color="#7f1a1a")
-  loss_age = sns.jointplot(y='capital-loss', x='age', data=df_census, kind="reg", color="#7f1a1a")
-  fnlwgt_age = sns.jointplot(y='fnlwgt', x='age', data=df_census, kind="reg", color="#7f1a1a")
-  hours_age = sns.jointplot(y='hours-per-week', x='age', data=df_census, kind="reg", color="#7f1a1a")
+  gain_age = sns.jointplot(data=df_census, y='capital-gain', x='age', kind="reg", color="#7f1a1a")
+  loss_age = sns.jointplot(data=df_census, y='capital-loss', x='age', kind="reg", color="#7f1a1a")
+  fnlwgt_age = sns.jointplot(data=df_census, y='fnlwgt', x='age', kind="reg", color="#7f1a1a")
+  hours_age = sns.jointplot(data=df_census, y='hours-per-week', x='age', kind="reg", color="#7f1a1a")
   hours_gain = sns.jointplot(y='hours-per-week', x='capital-gain', data=df_census, kind="reg", color="#7f1a1a")
 
   col2.markdown('Some exploratory graphs for the raw data')
