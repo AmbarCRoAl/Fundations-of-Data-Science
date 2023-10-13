@@ -16,7 +16,7 @@ def file_uploaded():
   st.session_state['file']='done'
 file_uploaded = col2.file_uploader('Upload the census file here', on_change=file_uploaded)
 if  st.session_state['file'] == 'done':
-  st.sucess('File uploaded sucessfully')
+  col2.write('File uploaded sucessfully')
          
   df_census = file_uploaded
   gain_age = sns.jointplot(y='capital-gain', x='age', data=df_census, kind="reg", color="#7f1a1a")
