@@ -397,6 +397,146 @@ def plot_clustered_stacked_2axis(categories, labels, labels_axis, colors, values
 
 
 
+#AGE AND GENDER -----------------------------------------------------------------
+#Percentage of population earning over 50K
+def graph_age_percentage():
+  fig, ax = plt.subplots()
+  y1_values = ratio_people[age_index_f_m[0]: age_index_f_m[1]]
+  y2_values = ratio_people[age_index_f_m[2]: age_index_f_m[3]]
+  x1_age = [25,45,65,90]
+  plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
+  plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
+  plt.ylabel('Percentage of population')
+  plt.xlabel('Age')
+  plt.legend()
+  plt.show()
+  return fig
+
+#Gains and losses for populations over and under 50K
+def graph_age_gains():
+  fig, ax = plt.subplots()
+  y1_values, y2_values = ratio_gain_over[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_over[age_index_f_m[2]:age_index_f_m[3]]
+  y3_values, y4_values = ratio_gain_under[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_under[age_index_f_m[2]:age_index_f_m[3]]
+  categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
+  labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
+  colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
+  plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
+  plt.xlabel('Age')
+  plt.ylabel('Capital gains')
+  plt.legend()
+  plt.show()
+  return fig
+
+def graph_age_losses():
+  fig, ax = plt.subplots()
+  y1_values, y2_values = ratio_loss_over[age_index_f_m[0]:age_index_f_m[1]], ratio_loss_over[age_index_f_m[2]:age_index_f_m[3]]
+  y3_values, y4_values = ratio_loss_under[age_index_f_m[0]:age_index_f_m[1]], ratio_loss_under[age_index_f_m[2]:age_index_f_m[3]]
+  categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
+  labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
+  colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
+  plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
+  plt.ylabel('Capital losses')
+  plt.xlabel('Age')
+  plt.legend()
+  plt.show()
+  return fig
+
+
+
+
+#FUNCTIONS TO GRAPH  -------------------------------------------------------------
+#JOB SECTOR AND EDUCATION LEVEL --------------------------------------------------
+#Gains and losses over and under 50K
+def graph_jobedu_gains():
+  y1_values, y2_values = ratio_gain_over[education_index[0]:education_index[1]], ratio_gain_over[jobsector_index[0]:jobsector_index[1]]
+  y3_values, y4_values = ratio_gain_under[education_index[0]:education_index[1]], ratio_gain_under[jobsector_index[0]:jobsector_index[1]]
+  x_educ_sec = np.linspace(1, len(y1_values)+1, len(y1_values))
+  label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
+  labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
+  label_axis_education_sector = ['>50K', '<50K']
+  colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
+  fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+  custom_labels = []
+  for i in range(len(label1_x)):
+    string = label1_x[i] +'\n' + label2_x[i]
+    custom_labels.append(string)
+  # Set custom ticks and labels for the x-axis
+  plt.xticks(x_educ_sec, custom_labels)
+  plt.title('Capital gains')
+  plt.show()
+  return fig
+
+def graph_jobedu_losses():
+  y1_values, y2_values = ratio_loss_over[education_index[0]:education_index[1]], ratio_loss_over[jobsector_index[0]:jobsector_index[1]]
+  y3_values, y4_values = ratio_loss_under[education_index[0]:education_index[1]], ratio_loss_under[jobsector_index[0]:jobsector_index[1]]
+  label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
+  labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
+  label_axis_education_sector = ['>50K', '<50K']
+  colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
+  fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+  custom_labels = []
+  for i in range(len(label1_x)):
+    string = label1_x[i] +'\n' + label2_x[i]
+    custom_labels.append(string)
+  # Set custom ticks and labels for the x-axis
+  plt.xticks(x_educ_sec, custom_labels)
+  plt.ylabel('Capital losses')
+  plt.show()
+  return fig
+
+
+
+
+#COUNTRY OF ORIGIN ----------------------------------------------------------------
+#Percentage of people with income over 50k
+def graph_countr_percentage():
+  fig, ax = plt.subplots()
+  y1_values = ratio_people[country_index[0]:country_index[1]]
+  categories_country = ['United_States', 'South_America', 'Canada', 'Europe', 'Asia']
+  bar_width = 0.35
+  index = np.arange(len(categories_country))
+  plt.xticks(index, categories_country)
+  plt.ylabel('Percentage of population')
+  plt.bar(index, y1_values, bar_width, color='darkviolet')
+  plt.show()
+  return fig
+
+#Gains and losses for over and under 50K
+def graph_countr_gainloss():
+  fig, ax = plt.subplots()
+  y1_values, y2_values = ratio_gain_over[country_index[0]:country_index[1]], ratio_gain_under[country_index[0]:country_index[1]]
+  y3_values, y4_values = ratio_loss_over[country_index[0]:country_index[1]], ratio_loss_under[country_index[0]:country_index[1]]
+  x_country = np.linspace(1, len(y1_values)+1, len(y1_values))
+  labels_country = ['Gains >50K', 'Gains < 50K', 'Losses >50K', 'Losses <50K']
+  label_axis_country = ['Capital gains', 'Capital losses']
+  colors_country = ['mediumblue', 'cornflowerblue', 'purple', 'hotpink']
+  label_x = groups[country_index[0]:country_index[1]].copy()
+  fig = plot_clustered_stacked_2axis(label_x, labels_country, label_axis_country, colors_country, y1_values, y2_values, y3_values, y4_values)
+  plt.show()
+  return fig
+
+
+
+
+#MARITAL STATUS -------------------------------------------------------------------
+#Gains and losses for over and under 50K
+def graph_marital_gainloss():
+  y1_values, y2_values = ratio_gain_over[marital_stat_index[0]:marital_stat_index[1]], ratio_gain_under[marital_stat_index[0]:marital_stat_index[1]]
+  y3_values, y4_values = ratio_loss_over[marital_stat_index[0]:marital_stat_index[1]], ratio_loss_under[marital_stat_index[0]:marital_stat_index[1]]
+  x_marital = np.linspace(1, len(y1_values)+1, len(y1_values))
+  labels_marital = ['Gains >50K', 'Gains < 50K', 'Losses >50K', 'Losses <50K']
+  label_axis_marital = ['Capital gain for over-earners', 'Capital fluctuation']
+  colors_marital = ['darkgoldenrod', 'burlywood', 'slategrey', 'lightsteelblue']
+  fig = plot_line_2axis_labeled2(y1_values, y2_values, colors_marital, labels_marital, label_axis_marital, x_marital, y3_values, y4_values)
+  # Set custom ticks and labels for the x-axis
+  label_x = groups[marital_stat_index[0]:marital_stat_index[1]].copy()
+  plt.xticks(x_educ_sec, label_x)
+  plt.show()
+  return fig
+
+
+
+
 #---------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------
 #--------------------------------THE CODE BELLOW IS FOR APP DISPLAY---------------------------------------
@@ -406,139 +546,36 @@ def plot_clustered_stacked_2axis(categories, labels, labels_axis, colors, values
 
 
 
-
-st.write('# Age and gender')
-#AGE AND GENDER -----------------------------------------------------------------
-#Percentage of population earning over 50K
-fig, ax = plt.subplots()
-y1_values = ratio_people[age_index_f_m[0]: age_index_f_m[1]]
-y2_values = ratio_people[age_index_f_m[2]: age_index_f_m[3]]
-x1_age = [25,45,65,90]
-plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
-plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
-plt.ylabel('Percentage of population')
-plt.xlabel('Age')
-plt.legend()
-plt.show()
-st.pyplot(fig)
-
-#Gains and losses for populations over and under 50K
-fig, ax = plt.subplots()
-y1_values, y2_values = ratio_gain_over[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_over[age_index_f_m[2]:age_index_f_m[3]]
-y3_values, y4_values = ratio_gain_under[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_under[age_index_f_m[2]:age_index_f_m[3]]
-categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
-labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
-colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
-plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
-plt.xlabel('Age')
-plt.ylabel('Capital gains')
-plt.legend()
-plt.show()
-st.pyplot(fig)
-
-fig, ax = plt.subplots()
-y1_values, y2_values = ratio_loss_over[age_index_f_m[0]:age_index_f_m[1]], ratio_loss_over[age_index_f_m[2]:age_index_f_m[3]]
-y3_values, y4_values = ratio_loss_under[age_index_f_m[0]:age_index_f_m[1]], ratio_loss_under[age_index_f_m[2]:age_index_f_m[3]]
-categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
-labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
-colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
-plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
-plt.ylabel('Capital losses')
-plt.xlabel('Age')
-plt.legend()
-plt.show()
-st.pyplot(fig)
-
-
-
-
-st.write('# Working sector and education')
-#JOB SECTOR AND EDUCATION LEVEL --------------------------------------------------
-#Gains and losses over and under 50K
-y1_values, y2_values = ratio_gain_over[education_index[0]:education_index[1]], ratio_gain_over[jobsector_index[0]:jobsector_index[1]]
-y3_values, y4_values = ratio_gain_under[education_index[0]:education_index[1]], ratio_gain_under[jobsector_index[0]:jobsector_index[1]]
-x_educ_sec = np.linspace(1, len(y1_values)+1, len(y1_values))
-label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
-labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
-label_axis_education_sector = ['>50K', '<50K']
-colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
-fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
-custom_labels = []
-for i in range(len(label1_x)):
-  string = label1_x[i] +'\n' + label2_x[i]
-  custom_labels.append(string)
-# Set custom ticks and labels for the x-axis
-plt.xticks(x_educ_sec, custom_labels)
-plt.title('Capital gains')
-plt.show()
-st.pyplot(fig)
-
-
-y1_values, y2_values = ratio_loss_over[education_index[0]:education_index[1]], ratio_loss_over[jobsector_index[0]:jobsector_index[1]]
-y3_values, y4_values = ratio_loss_under[education_index[0]:education_index[1]], ratio_loss_under[jobsector_index[0]:jobsector_index[1]]
-label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
-labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
-label_axis_education_sector = ['>50K', '<50K']
-colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
-fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
-custom_labels = []
-for i in range(len(label1_x)):
-  string = label1_x[i] +'\n' + label2_x[i]
-  custom_labels.append(string)
-# Set custom ticks and labels for the x-axis
-plt.xticks(x_educ_sec, custom_labels)
-plt.ylabel('Capital losses')
-plt.show()
-st.pyplot(fig)
-
-
-
-
-st.write('# Country of origin')
-#COUNTRY OF ORIGIN ----------------------------------------------------------------
-#Percentage of people with income over 50k
-fig, ax = plt.subplots()
-y1_values = ratio_people[country_index[0]:country_index[1]]
-categories_country = ['United_States', 'South_America', 'Canada', 'Europe', 'Asia']
-bar_width = 0.35
-index = np.arange(len(categories_country))
-plt.xticks(index, categories_country)
-plt.ylabel('Percentage of population')
-plt.bar(index, y1_values, bar_width, color='darkviolet')
-plt.show()
-st.pyplot(fig)
-
-#Gains and losses for over and under 50K
-fig, ax = plt.subplots()
-y1_values, y2_values = ratio_gain_over[country_index[0]:country_index[1]], ratio_gain_under[country_index[0]:country_index[1]]
-y3_values, y4_values = ratio_loss_over[country_index[0]:country_index[1]], ratio_loss_under[country_index[0]:country_index[1]]
-x_country = np.linspace(1, len(y1_values)+1, len(y1_values))
-labels_country = ['Gains >50K', 'Gains < 50K', 'Losses >50K', 'Losses <50K']
-label_axis_country = ['Capital gains', 'Capital losses']
-colors_country = ['mediumblue', 'cornflowerblue', 'purple', 'hotpink']
-label_x = groups[country_index[0]:country_index[1]].copy()
-fig = plot_clustered_stacked_2axis(label_x, labels_country, label_axis_country, colors_country, y1_values, y2_values, y3_values, y4_values)
-plt.show()
-st.pyplot(fig)
-
-
-
-
+sd = st.selectbox(
+        "Which attribute would you like to learn more about?", #Drop Down Menu Name
+        [
+            "Age and gender", #First option in menu
+            "Country of origin",   #Second option in menu
+            "Marital Status",
+            "Working sector and education"
+        ]
+    )
 
 
 
 st.write('# Marital Status')
-#MARITAL STATUS -------------------------------------------------------------------
-#Gains and losses for over and under 50K
-y1_values, y2_values = ratio_gain_over[marital_stat_index[0]:marital_stat_index[1]], ratio_gain_under[marital_stat_index[0]:marital_stat_index[1]]
-y3_values, y4_values = ratio_loss_over[marital_stat_index[0]:marital_stat_index[1]], ratio_loss_under[marital_stat_index[0]:marital_stat_index[1]]
-x_marital = np.linspace(1, len(y1_values)+1, len(y1_values))
-labels_marital = ['Gains >50K', 'Gains < 50K', 'Losses >50K', 'Losses <50K']
-label_axis_marital = ['Capital gain for over-earners', 'Capital fluctuation']
-colors_marital = ['darkgoldenrod', 'burlywood', 'slategrey', 'lightsteelblue']
-fig = plot_line_2axis_labeled2(y1_values, y2_values, colors_marital, labels_marital, label_axis_marital, x_marital, y3_values, y4_values)
-# Set custom ticks and labels for the x-axis
-label_x = groups[marital_stat_index[0]:marital_stat_index[1]].copy()
-plt.xticks(x_educ_sec, label_x)
-plt.show()
-st.pyplot(fig)
+    if sd == "Age and gender":
+        st.write('# Age and gender')
+        fig = plot_age_percentage()
+        fig = plot_age_gains()
+        fig = plot_age_losses()
+    
+    elif sd == "Working sector and education":
+        st.write('# Working sector and education')
+        fig = plot_jobedu_gains()
+        fig = plot_jobedu_losses()
+
+    elif sd == "Country of origin":
+        st.write('# Country of origin')
+        fig = plot_countr_percentage()
+        fig = plot_countr_gainloss()
+
+    elif sd == "Marital status":
+        st.write('# Marital status"')
+        fig = plot_marital_gainloss()
+
