@@ -288,7 +288,7 @@ def plot_line_2axis_labeled(y1_values, y2_values, colors, labels, label_axis, x_
   ax1.legend(loc='upper left')
   ax2.legend(loc='upper right')
   plt.tight_layout()
-  return
+  return fig
 
 #Plot either 2 lines or two pairs of lines in one graph with 2 axis
 def plot_line_2axis_labeled2(y1_values, y2_values, colors, labels, label_axis, x_values=0, y3_values=0, y4_values=0):
@@ -330,7 +330,7 @@ def plot_line_2axis_labeled2(y1_values, y2_values, colors, labels, label_axis, x
   ax1.legend(loc='upper left')
   ax2.legend(loc='upper right',  bbox_to_anchor=(1, 0.75))
   plt.tight_layout()
-  return
+  return fig
 
 # Plot clustered columns 
 def plot_clustered_columns(categories, labels, colors, values1, values2, values3=0, values4=0):
@@ -455,7 +455,6 @@ st.pyplot(fig)
 st.write('# Working sector and education')
 #JOB SECTOR AND EDUCATION LEVEL --------------------------------------------------
 #Gains and losses over and under 50K
-fig, ax = plt.subplots()
 y1_values, y2_values = ratio_gain_over[education_index[0]:education_index[1]], ratio_gain_over[jobsector_index[0]:jobsector_index[1]]
 y3_values, y4_values = ratio_gain_under[education_index[0]:education_index[1]], ratio_gain_under[jobsector_index[0]:jobsector_index[1]]
 x_educ_sec = np.linspace(1, len(y1_values)+1, len(y1_values))
@@ -463,7 +462,7 @@ label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), group
 labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
 label_axis_education_sector = ['>50K', '<50K']
 colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
-plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
 custom_labels = []
 for i in range(len(label1_x)):
   string = label1_x[i] +'\n' + label2_x[i]
@@ -475,14 +474,13 @@ plt.show()
 st.pyplot(fig)
 
 
-fig, ax = plt.subplots()
 y1_values, y2_values = ratio_loss_over[education_index[0]:education_index[1]], ratio_loss_over[jobsector_index[0]:jobsector_index[1]]
 y3_values, y4_values = ratio_loss_under[education_index[0]:education_index[1]], ratio_loss_under[jobsector_index[0]:jobsector_index[1]]
 label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
 labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
 label_axis_education_sector = ['>50K', '<50K']
 colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
-plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
 custom_labels = []
 for i in range(len(label1_x)):
   string = label1_x[i] +'\n' + label2_x[i]
@@ -532,14 +530,13 @@ st.pyplot(fig)
 st.write('# Marital Status')
 #MARITAL STATUS -------------------------------------------------------------------
 #Gains and losses for over and under 50K
-fig, ax = plt.subplots()
 y1_values, y2_values = ratio_gain_over[marital_stat_index[0]:marital_stat_index[1]], ratio_gain_under[marital_stat_index[0]:marital_stat_index[1]]
 y3_values, y4_values = ratio_loss_over[marital_stat_index[0]:marital_stat_index[1]], ratio_loss_under[marital_stat_index[0]:marital_stat_index[1]]
 x_marital = np.linspace(1, len(y1_values)+1, len(y1_values))
 labels_marital = ['Gains >50K', 'Gains < 50K', 'Losses >50K', 'Losses <50K']
 label_axis_marital = ['Capital gain for over-earners', 'Capital fluctuation']
 colors_marital = ['darkgoldenrod', 'burlywood', 'slategrey', 'lightsteelblue']
-plot_line_2axis_labeled2(y1_values, y2_values, colors_marital, labels_marital, label_axis_marital, x_marital, y3_values, y4_values)
+fig = plot_line_2axis_labeled2(y1_values, y2_values, colors_marital, labels_marital, label_axis_marital, x_marital, y3_values, y4_values)
 # Set custom ticks and labels for the x-axis
 label_x = groups[marital_stat_index[0]:marital_stat_index[1]].copy()
 plt.xticks(x_educ_sec, label_x)
