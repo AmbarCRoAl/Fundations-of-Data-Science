@@ -1,5 +1,19 @@
-import streamlit as st
+#Code for preliminary look at census and income dataset
+
+import pandas as pd
 import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+from google.colab import drive
+
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/adult_data.csv'
+df_census = pd.read_csv(url)
+# fnlwgt is final weight, which is a weight of population percentage representation
+# they used 3 sets of controls. These are: A single cell estimate of the population 16+
+# for each state. Controls for Hispanic Origin by age and sex. Controls by Race, age
+# and sex. The term estimate refers to population totals derived from Current Population Survey by creating
+# "weighted tallies" of any specified socio-economic characteristics of the population.
+# People with similar demographic characteristics should have similar weights.
 
 
 col1, col2 = st.columns([1,2]) #Creates 2 columns where the one in the middle is double the size that the other
@@ -12,6 +26,10 @@ with st.expander('More information'):
   st.write('The attributes are: age,	workclass,	fnlwgt,	education,	education-num,	mariatl,	occupation,	relationship,	race,	sex,	capital-gain,	capital-loss,	hours-per-week,	countr,	income.')
   st.write('The last attribute (income) only tells you weather or not that individual earns more than $50,000 per year, it does not give the absolute value of their income.')
 
+with st.expander('Dataset'):
+  st.table(df_census)
+
+st.divider()
 st.write('Want to see where you stand among the US population?\nUpload your info here:')
 person_age = st.text_input('Age:')
 person_sex = st.text_input('Sex/Gender:')
