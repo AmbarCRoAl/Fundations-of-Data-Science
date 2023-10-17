@@ -347,7 +347,6 @@ x1_age = [25,45,65,90]
 plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
 plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
 plt.legend()
-plt.show()
 st.pyplot()
 
 #Gains for populations under and over 50K
@@ -360,6 +359,7 @@ plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values
 plt.xlabel('Age')
 plt.legend()
 plt.show()
+st.pyplot()
 
 
 
