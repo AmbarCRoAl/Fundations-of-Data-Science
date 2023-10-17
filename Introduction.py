@@ -38,3 +38,5 @@ person_education = st.text_input('Education level:')
 person_industry = st.text_input('Work sector (industry, federal, etc):')
 person_country = st.text_input('Country of origin:')
 person_info = [person_age, person_sex, person_education, person_industry, person_country]
+
+
