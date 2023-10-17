@@ -1,10 +1,8 @@
-#Code for preliminary look at census and income dataset
-
 import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
-from google.colab import drive
+import streamlit as st
 
 url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/adult_data.csv'
 df_census = pd.read_csv(url)
