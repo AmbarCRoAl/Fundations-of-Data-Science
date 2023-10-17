@@ -25,7 +25,8 @@ with st.expander('More information'):
   st.write('The last attribute (income) only tells you weather or not that individual earns more than $50,000 per year, it does not give the absolute value of their income.')
 
 with st.expander('Dataset'):
-  st.table(df_census)
+  st.write('Showing only the first 20 rows')
+  st.table(df_census.head(20))
 
 st.divider()
 st.write('Want to see where you stand among the US population?\nUpload your info here:')
