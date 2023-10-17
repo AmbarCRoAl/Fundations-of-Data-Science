@@ -23,6 +23,8 @@ with st.expander('More information'):
   st.write('It was extracted from https://archive.ics.uci.edu/dataset/20/census+income')
   st.write('The attributes are: age,	workclass,	fnlwgt,	education,	education-num,	mariatl,	occupation,	relationship,	race,	sex,	capital-gain,	capital-loss,	hours-per-week,	countr,	income.')
   st.write('The last attribute (income) only tells you weather or not that individual earns more than $50,000 per year, it does not give the absolute value of their income.')
+  st.write('The attribute fnlwgt stands for final weight. The term estimate refers to population totals derived from Current Population Survey by creating "weighted tallies" of 
+            any specified socio-economic characteristics of the population. People with similar demographic characteristics should have similar weights.')
 
 with st.expander('Dataset'):
   st.write('Showing only the first 20 rows')
