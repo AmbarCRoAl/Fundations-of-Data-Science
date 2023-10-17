@@ -348,6 +348,7 @@ plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
 plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
 plt.legend()
 plt.show()
+st.pyplot()
 
 #Gains for populations under and over 50K
 y1_values, y2_values = ratio_gain_over[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_over[age_index_f_m[2]:age_index_f_m[3]]
