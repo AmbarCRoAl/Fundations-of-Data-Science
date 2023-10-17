@@ -3,7 +3,6 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
-from streamlit import pyplot
 
 url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/adult_data.csv'
 df_census = pd.read_csv(url)
@@ -557,13 +556,14 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
     )
 
 if sd == "Age and gender":
+    col1, col2 = st.columns(2)
     st.write('# Age and gender')
     fig = graph_age_percentage()
-    pyplot(fig)
+    st.pyplot(fig)
     fig = graph_age_gains()
-    pyplot(fig)
+    col1.pyplot(fig)
     fig = graph_age_losses()
-    pyplot(fig)
+    col2.pyplot(fig)
 
 elif sd == "Working sector and education":
     st.write('# Working sector and education')
