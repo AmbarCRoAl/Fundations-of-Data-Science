@@ -545,8 +545,8 @@ def graph_marital_gainloss():
 
 
 
-
-sd = st.selectbox("Which attribute would you like to learn more about?", #Drop Down Menu Name
+st.title("Which attribute would you like to learn more about?")
+sd = st.selectbox("Please select one:", #Drop Down Menu Name
         [
             "Age and gender", #First option in menu
             "Country of origin",   #Second option in menu
