@@ -381,7 +381,7 @@ for i in range(len(label1_x)):
   custom_labels.append(string)
 # Set custom ticks and labels for the x-axis
 plt.xticks(x_educ_sec, custom_labels)
-pyplot(fig)
+st.pyplot(fig)
 
 
 
