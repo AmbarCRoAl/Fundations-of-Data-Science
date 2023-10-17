@@ -556,10 +556,10 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
     )
 
 if sd == "Age and gender":
-    col1, col2 = st.columns(2)
     st.write('# Age and gender')
     fig = graph_age_percentage()
     st.pyplot(fig)
+    col1, col2 = st.columns(2)
     fig = graph_age_gains()
     col1.pyplot(fig)
     fig = graph_age_losses()
