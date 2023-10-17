@@ -315,7 +315,7 @@ def plot_clustered_stacked_columns(categories, labels, colors, values1, values1_
   bar_width = 0.25
   index = np.arange(len(categories))
   plt.xticks(index + bar_width / 2, categories)
-  if isinstance(values3, int) and isinstance(values2_2, int) :
+  if isinstance(values2, int) and isinstance(values2_2, int) :
     plt.bar(index, values1, bar_width, label=labels[0], color=colors[0])
     plt.bar(index, values1_2, bar_width, label=labels[1], color=colors[1])
   else:
