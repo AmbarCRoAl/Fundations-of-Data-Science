@@ -12,11 +12,10 @@ with st.expander('More information'):
   st.write('The attributes are: age,	workclass,	fnlwgt,	education,	education-num,	mariatl,	occupation,	relationship,	race,	sex,	capital-gain,	capital-loss,	hours-per-week,	countr,	income.')
   st.write('The last attribute (income) only tells you weather or not that individual earns more than $50,000 per year, it does not give the absolute value of their income.')
 
-if 'file' not in st.session_state:
-  st.session_state['file'] = 'not done'
-def file_uploaded():
-  st.session_state['file']='done'
-file_uploaded = col2.file_uploader('Want to see where you stand among US population?\nUpload your info here:', on_change=file_uploaded)
-if  st.session_state['file'] == 'done':
-  col2.write('File uploaded sucessfully')
-
+st.write('Want to see where you stand among the US population?\nUpload your info here:')
+person_age = st.text_input('Age:')
+person_sex = st.text_input('Sex/Gender:')
+person_education = st.text_input('Education level:')
+person_industry = st.text_input('Work sector (industry, federal, etc):')
+person_country = st.text_input('Country of origin:')
+person_info = [person_age, person_sex, person_education, person_industry, person_country]
