@@ -30,7 +30,8 @@ with st.expander('Dataset'):
   st.table(df_census.head(20))
 
 st.divider()
-st.write('Want to see where you stand among the US population?\nUpload your info here:')
+st.subheader('Want to see where you stand among the US population?')
+st.write('Upload your info here:')
 person_age = st.text_input('Age:')
 person_sex = st.text_input('Sex/Gender:')
 person_education = st.text_input('Education level:')
