@@ -350,7 +350,6 @@ plt.legend()
 plt.show()
 
 #Gains for populations under and over 50K
-print('\n******CAPITAL GAINS:')
 y1_values, y2_values = ratio_gain_over[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_over[age_index_f_m[2]:age_index_f_m[3]]
 y3_values, y4_values = ratio_gain_under[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_under[age_index_f_m[2]:age_index_f_m[3]]
 categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
