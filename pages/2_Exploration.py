@@ -288,7 +288,7 @@ def plot_line_2axis_labeled(y1_values, y2_values, colors, labels, label_axis, x_
   ax1.legend(loc='upper left')
   ax2.legend(loc='upper right')
   plt.tight_layout()
-  return
+  return fig
 
 # Plot clustered columns using Matplotlib
 def plot_clustered_columns(categories, labels, colors, values1, values2, values3=0, values4=0):
@@ -344,22 +344,23 @@ st.write('# Age and gender')
 y1_values = ratio_people[age_index_f_m[0]: age_index_f_m[1]]
 y2_values = ratio_people[age_index_f_m[2]: age_index_f_m[3]]
 x1_age = [25,45,65,90]
+fig, ax = plt.subplots()
 plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
 plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
-plt.legend()
-st.pyplot()
+ax.legend()
+st.pyplot(fig)
 
 #Gains for populations under and over 50K
+fig, ax = plt.subplots()
 y1_values, y2_values = ratio_gain_over[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_over[age_index_f_m[2]:age_index_f_m[3]]
 y3_values, y4_values = ratio_gain_under[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_under[age_index_f_m[2]:age_index_f_m[3]]
 categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
 labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
 colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
 plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
-plt.xlabel('Age')
-plt.legend()
-plt.show()
-st.pyplot()
+ax.xlabel('Age')
+ax.legend()
+st.pyplot(fig)
 
 
 
@@ -373,14 +374,14 @@ label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), group
 labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
 label_axis_education_sector = ['>50K', '<50K']
 colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
-plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
 custom_labels = []
 for i in range(len(label1_x)):
   string = label1_x[i] +'\n' + label2_x[i]
   custom_labels.append(string)
 # Set custom ticks and labels for the x-axis
 plt.xticks(x_educ_sec, custom_labels)
-plt.show()
+pyplot(fig)
 
 
 
