@@ -347,7 +347,7 @@ x1_age = [25,45,65,90]
 fig, ax = plt.subplots()
 plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
 plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
-ax.legend()
+plt.legend()
 st.pyplot(fig)
 
 #Gains for populations under and over 50K
@@ -358,8 +358,8 @@ categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
 labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
 colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
 plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
-ax.xlabel('Age')
-ax.legend()
+plt.xlabel('Age')
+plt.legend()
 st.pyplot(fig)
 
 
