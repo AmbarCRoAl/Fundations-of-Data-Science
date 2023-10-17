@@ -558,20 +558,28 @@ sd = st.selectbox("Which attribute would you like to learn more about?", #Drop D
 if sd == "Age and gender":
     st.write('# Age and gender')
     fig = graph_age_percentage()
+    pyplot(fig)
     fig = graph_age_gains()
+    pyplot(fig)
     fig = graph_age_losses()
+    pyplot(fig)
 
 elif sd == "Working sector and education":
     st.write('# Working sector and education')
     fig = graph_jobedu_gains()
+    pyplot(fig)
     fig = graph_jobedu_losses()
+    pyplot(fig)
 
 elif sd == "Country of origin":
     st.write('# Country of origin')
     fig = graph_countr_percentage()
+    pyplot(fig)
     fig = graph_countr_gainloss()
+    pyplot(fig)
 
 elif sd == "Marital status":
     st.write('# Marital status"')
     fig = graph_marital_gainloss()
+    pyplot(fig)
 
