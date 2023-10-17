@@ -1,4 +1,11 @@
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
 import streamlit as st
+
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/adult_data.csv'
+df_census = pd.read_csv(url)
 
 #Cleaning data and summing different attributes
 df1 = df_census.copy()
@@ -331,11 +338,54 @@ def plot_clustered_stacked_columns(categories, labels, colors, values1, values1_
 
 
 
-
 st.write('# Age and gender')
+#AGE AND GENDER -----------------------------------------------------------------
+#Percentage of population earning over 50K
+y1_values = ratio_people[age_index_f_m[0]: age_index_f_m[1]]
+y2_values = ratio_people[age_index_f_m[2]: age_index_f_m[3]]
+x1_age = [25,45,65,90]
+plot_shaded_line(y2_values, 'blue', 'Males', x1_age)
+plot_shaded_line(y1_values, 'Red', 'Females', x1_age)
+plt.legend()
+plt.show()
+
+#Gains for populations under and over 50K
+print('\n******CAPITAL GAINS:')
+y1_values, y2_values = ratio_gain_over[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_over[age_index_f_m[2]:age_index_f_m[3]]
+y3_values, y4_values = ratio_gain_under[age_index_f_m[0]:age_index_f_m[1]], ratio_gain_under[age_index_f_m[2]:age_index_f_m[3]]
+categories_age = ['Under 25', '25 to 45', '45 to 65', 'Over 65']
+labels_age = ['Females >50K', 'Females <50K', 'Males >50K', 'Males <50K']
+colors_age = ['red', 'lightcoral', 'blue', 'dodgerblue']
+plot_clustered_stacked_columns(categories_age, labels_age, colors_age, y1_values, y3_values, y2_values, y4_values)
+plt.xlabel('Age')
+plt.legend()
+plt.show()
+
+
 
 st.write('# Working sector and education')
+#JOB SECTOR AND EDUCATION LEVEL --------------------------------------------------
+#Gains and losses over and under 50K
+y1_values, y2_values = ratio_gain_over[education_index[0]:education_index[1]], ratio_gain_over[jobsector_index[0]:jobsector_index[1]]
+y3_values, y4_values = ratio_gain_under[education_index[0]:education_index[1]], ratio_gain_under[jobsector_index[0]:jobsector_index[1]]
+x_educ_sec = np.linspace(1, len(y1_values)+1, len(y1_values))
+label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
+labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
+label_axis_education_sector = ['>50K', '<50K']
+colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
+plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+custom_labels = []
+for i in range(len(label1_x)):
+  string = label1_x[i] +'\n' + label2_x[i]
+  custom_labels.append(string)
+# Set custom ticks and labels for the x-axis
+plt.xticks(x_educ_sec, custom_labels)
+plt.show()
+
+
 
 st.write('# Country of origin')
+#COUNTRY OF ORIGIN ----------------------------------------------------------------
 
 st.write('# Marital Status')
+#MARITAL STATUS -------------------------------------------------------------------
