@@ -5,6 +5,7 @@ import seaborn as sns
 col1, col2 = st.columns([1,2]) #Creates 2 columns where the one in the middle is double the size that the other
 col1.markdown('# App for census information') #The hash makes it a title
 
+col2.image('https://www.census.gov/content/dam/Census/library/visualizations/2018/comm/acs-5yr-mhi-all-counties.jpg')
 with st.expander('More information'):
   st.write('Extraction was done by Barry Becker from the 1994 Census database.') 
   st.write('It was extracted from https://archive.ics.uci.edu/dataset/20/census+income')
