@@ -546,8 +546,7 @@ def graph_marital_gainloss():
 
 
 
-sd = st.selectbox(
-        "Which attribute would you like to learn more about?", #Drop Down Menu Name
+sd = st.selectbox("Which attribute would you like to learn more about?", #Drop Down Menu Name
         [
             "Age and gender", #First option in menu
             "Country of origin",   #Second option in menu
@@ -556,26 +555,23 @@ sd = st.selectbox(
         ]
     )
 
+if sd == "Age and gender":
+    st.write('# Age and gender')
+    fig = plot_age_percentage()
+    fig = plot_age_gains()
+    fig = plot_age_losses()
 
+elif sd == "Working sector and education":
+    st.write('# Working sector and education')
+    fig = plot_jobedu_gains()
+    fig = plot_jobedu_losses()
 
-st.write('# Marital Status')
-    if sd == "Age and gender":
-        st.write('# Age and gender')
-        fig = plot_age_percentage()
-        fig = plot_age_gains()
-        fig = plot_age_losses()
-    
-    elif sd == "Working sector and education":
-        st.write('# Working sector and education')
-        fig = plot_jobedu_gains()
-        fig = plot_jobedu_losses()
+elif sd == "Country of origin":
+    st.write('# Country of origin')
+    fig = plot_countr_percentage()
+    fig = plot_countr_gainloss()
 
-    elif sd == "Country of origin":
-        st.write('# Country of origin')
-        fig = plot_countr_percentage()
-        fig = plot_countr_gainloss()
-
-    elif sd == "Marital status":
-        st.write('# Marital status"')
-        fig = plot_marital_gainloss()
+elif sd == "Marital status":
+    st.write('# Marital status"')
+    fig = plot_marital_gainloss()
 
