@@ -26,6 +26,7 @@ if sd == "Age and gender":
 
 
 elif sd == "Working sector and education":
+        st.subheader("The level of education determines your capital gains and losses in almost an identical way as the working sector you go to.")
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Working sector and education</h1>", unsafe_allow_html=True) 
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect1.png')
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect2.png')
