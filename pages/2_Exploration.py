@@ -38,6 +38,6 @@ elif sd == "Country of origin":
 
 elif sd == "Marital status":
         st.write('# Marital status"')
-        col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
+        st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
 
 
