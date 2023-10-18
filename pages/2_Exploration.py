@@ -8,6 +8,7 @@ import streamlit as st
 st.title("Which attribute would you like to learn more about?")
 sd = st.selectbox("Please select one:", #Drop Down Menu Name
         [
+            "--------------"
             "Age and gender",
             "Working sector and education", 
             "Country of origin",   
@@ -42,5 +43,5 @@ elif sd == "Country of origin":
 elif sd == "Marital status":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
-
-
+elif sd == "--------------":
+        st.markdown("# . . .")
