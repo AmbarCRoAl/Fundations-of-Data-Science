@@ -17,7 +17,7 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
 
 if sd == "Age and gender":
         st.write('# Age and gender')
-        st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png', width=35)
+        st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png', width=350)
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex2.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex3.png')
@@ -37,7 +37,7 @@ elif sd == "Country of origin":
 
 
 elif sd == "Marital status":
-        st.write('# Marital status"')
+        st.write('# Marital status')
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
 
 
