@@ -44,4 +44,4 @@ elif sd == "Marital status":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
 elif sd == "--------------":
-        st.markdown("# . . .")
+        st.markdown(" ")
