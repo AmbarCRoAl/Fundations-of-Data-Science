@@ -31,7 +31,7 @@ elif sd == "Working sector and education":
 
 elif sd == "Country of origin":
         st.write('# Country of origin')
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([4.5,5.5])
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country1.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
 
