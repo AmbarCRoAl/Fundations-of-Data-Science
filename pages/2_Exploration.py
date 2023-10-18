@@ -45,5 +45,9 @@ elif sd == "Marital status":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
         st.subheader("Married people tend to earn more, but when the income is bellow $50k, widows have higher capital gains.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
+        col1, col2 = st.columns([4.5,5.5])
+        col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital2.png')
+        
+
 elif sd == "--------------":
         st.markdown(" ")
