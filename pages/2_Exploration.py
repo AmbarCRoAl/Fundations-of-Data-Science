@@ -11,7 +11,7 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
             "--------------",
             "Age and gender",
             "Working sector and education", 
-            "Country of origin",   
+            "Region of origin",   
             "Marital status"
         ]
     )
@@ -33,14 +33,16 @@ elif sd == "Working sector and education":
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect2.png')
 
 
-elif sd == "Country of origin":
+elif sd == "Region of origin":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Country of origin</h1>", unsafe_allow_html=True) 
+        st.subheader("Canada is the region with the highest amount of high earners, followed by Asia and then the US, while South America is the one at the bottom.")
         col1, col2 = st.columns([4.5,5.5])
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country1.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
 
 
 elif sd == "Marital status":
+        st.markdown("Married people tend to earn more, but the income is bellow $50,000, widows have higher capital gains.")
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
 elif sd == "--------------":
