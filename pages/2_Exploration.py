@@ -8,7 +8,7 @@ import streamlit as st
 st.title("Which attribute would you like to learn more about?")
 sd = st.selectbox("Please select one:", #Drop Down Menu Name
         [
-            "--------------"
+            "--------------",
             "Age and gender",
             "Working sector and education", 
             "Country of origin",   
