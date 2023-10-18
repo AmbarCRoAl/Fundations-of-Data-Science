@@ -568,7 +568,7 @@ if sd == "Age and gender":
 elif sd == "Working sector and education":
     st.write('# Working sector and education')
     fig = graph_jobedu_gains()
-    pyplot(fig)
+    st.pyplot(fig)
     fig = graph_jobedu_losses()
     st.pyplot(fig)
 
