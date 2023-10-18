@@ -15,7 +15,7 @@ df_census = pd.read_csv(url)
 
 
 col1, col2 = st.columns([1,2]) #Creates 2 columns where the one in the middle is double the size that the other
-col1.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Correlations of people's attributes and their income</h1>", unsafe_allow_html=True) 
+col1.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Correlation of people's attributes and their income</h1>", unsafe_allow_html=True) 
 
 col2.image('https://www.census.gov/content/dam/Census/library/visualizations/2018/comm/acs-5yr-mhi-all-counties.jpg')
 with st.expander('More information'):
