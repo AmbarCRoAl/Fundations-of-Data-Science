@@ -16,7 +16,7 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
     )
 
 if sd == "Age and gender":
-        st.write('# Age and gender')
+        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Age and gender</h1>", unsafe_allow_html=True) 
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png')
         col1, col2 = st.columns(2)
@@ -25,20 +25,20 @@ if sd == "Age and gender":
 
 
 elif sd == "Working sector and education":
-        st.write('# Working sector and education')
+        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Working sector and education</h1>", unsafe_allow_html=True) 
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect1.png')
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect2.png')
 
 
 elif sd == "Country of origin":
-        st.write('# Country of origin')
+        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Country of origin</h1>", unsafe_allow_html=True) 
         col1, col2 = st.columns([4.5,5.5])
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country1.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
 
 
 elif sd == "Marital status":
-        st.write('# Marital status')
+        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
 
 
