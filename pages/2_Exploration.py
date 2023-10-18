@@ -42,8 +42,8 @@ elif sd == "Region of origin":
 
 
 elif sd == "Marital status":
-        st.markdown("Married people tend to earn more, but the income is bellow $50,000, widows have higher capital gains.")
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
+        st.subheader("Married people tend to earn more, but the income is bellow $50,000, widows have higher capital gains.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
 elif sd == "--------------":
         st.markdown(" ")
