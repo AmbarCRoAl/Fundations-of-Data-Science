@@ -548,10 +548,10 @@ def graph_marital_gainloss():
 st.title("Which attribute would you like to learn more about?")
 sd = st.selectbox("Please select one:", #Drop Down Menu Name
         [
-            "Age and gender", #First option in menu
-            "Country of origin",   #Second option in menu
-            "Marital Status",
-            "Working sector and education"
+            "Age and gender",
+            "Working sector and education", 
+            "Country of origin",   
+            "Marital Status"
         ]
     )
 
@@ -570,17 +570,17 @@ elif sd == "Working sector and education":
     fig = graph_jobedu_gains()
     pyplot(fig)
     fig = graph_jobedu_losses()
-    pyplot(fig)
+    st.pyplot(fig)
 
 elif sd == "Country of origin":
     st.write('# Country of origin')
     fig = graph_countr_percentage()
-    pyplot(fig)
+    st.pyplot(fig)
     fig = graph_countr_gainloss()
-    pyplot(fig)
+    st.pyplot(fig)
 
 elif sd == "Marital status":
     st.write('# Marital status"')
     fig = graph_marital_gainloss()
-    pyplot(fig)
+    st.pyplot(fig)
 
