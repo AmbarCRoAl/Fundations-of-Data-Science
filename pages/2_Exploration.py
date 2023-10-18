@@ -19,7 +19,7 @@ if sd == "Age and gender":
         st.write('# Age and gender')
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png')
-        st.markdown('Write something to separate the graphs.')
+        col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex2.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex3.png')
 
