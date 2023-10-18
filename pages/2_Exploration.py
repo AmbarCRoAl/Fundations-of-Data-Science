@@ -469,11 +469,12 @@ def graph_jobedu_gains():
 def graph_jobedu_losses():
   y1_values, y2_values = ratio_loss_over[education_index[0]:education_index[1]], ratio_loss_over[jobsector_index[0]:jobsector_index[1]]
   y3_values, y4_values = ratio_loss_under[education_index[0]:education_index[1]], ratio_loss_under[jobsector_index[0]:jobsector_index[1]]
-  label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
+  x_educ_sec = linspace(len(1, y1_values+1, y1_values))
   labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
   label_axis_education_sector = ['>50K', '<50K']
   colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
   fig = plot_line_2axis_labeled(y1_values, y2_values, colors_education_sector, labels_education_sector, label_axis_education_sector, x_educ_sec, y3_values, y4_values)
+  label1_x, label2_x = groups[education_index[0]:education_index[1]].copy(), groups[jobsector_index[0]:jobsector_index[1]].copy()
   custom_labels = []
   for i in range(len(label1_x)):
     string = label1_x[i] +'\n' + label2_x[i]
