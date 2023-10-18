@@ -469,7 +469,7 @@ def graph_jobedu_gains():
 def graph_jobedu_losses():
   y1_values, y2_values = ratio_loss_over[education_index[0]:education_index[1]], ratio_loss_over[jobsector_index[0]:jobsector_index[1]]
   y3_values, y4_values = ratio_loss_under[education_index[0]:education_index[1]], ratio_loss_under[jobsector_index[0]:jobsector_index[1]]
-  x_educ_sec = np.linspace(len(1, y1_values+1, y1_values))
+  x_educ_sec = np.linspace(1, len(y1_values)+1, len(y1_values))
   labels_education_sector = ['Education >50K', 'Employment sector >50K', 'Education <50K', 'Employment sector <50K']
   label_axis_education_sector = ['>50K', '<50K']
   colors_education_sector = ['yellowgreen', 'orange', 'darkgreen', 'chocolate']
