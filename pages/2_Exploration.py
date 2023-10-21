@@ -32,14 +32,14 @@ if sd == "Age and gender":
 
 
 elif sd == "Working class and education":
-        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Working sector and education</h1>", unsafe_allow_html=True) 
+        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Working class and education</h1>", unsafe_allow_html=True) 
         st.subheader("The level of education determines your capital gains and losses in almost an identical way as the working class you're part of.")
         st.write("One would guess that the level of education and the working sector of an individual are independent traits, and contribute to that individual's income level in different ways. During this study we have found that this is not true, instead, these attriutes seem to determine people's capital gains and losses in almost an identical manner.")
         st.write("If we place them in the orders:")
         st.markdown(" * Highschool diploma followed by, some college, Bachellors, Masters and PhD degrees")
         st.markdown(" * State goverment followed by, federal goverment, private sector, self employment (not incorporation), and self employed with incorporation")
         st.write("We will see lines that follow almost an identical trend.")
-        st.write("Bellow I present such graphs. Notice that these graphs have **two y-axes.** This is because the capital gains and losses for groups who earned above $50,000 per year (over-earners) compared to those who earn under $50,000 per year (under-earners) are drastically higher, in some cases orders of magnitudes.")
+        st.write("Bellow I present such graphs. Notice that these graphs have **two y-axes.** This is because the capital gains and losses for groups who earned above \$50,000 per year (over-earners) compared to those who earn under \$50,000 per year (under-earners) are drastically higher, in some cases orders of magnitudes.")
         st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axes correspond to the capital gains/losses of over-earners, and the right axis to the gains/losses of under-earners.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect1.png')
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect2.png')
