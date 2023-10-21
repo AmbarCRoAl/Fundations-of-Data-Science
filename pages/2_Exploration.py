@@ -58,7 +58,10 @@ elif sd == "Region of origin":
         col2.write("We observe that the percentage of over earners is highest in Canada, followed by Asia, Europe, United States and the lowest being South America.") 
         col1, col2 = st.columns(2)        
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
-        col2.write("The capital gains and losses of these regions ovserve a decreasing value in the same previously mentioned order, with the only difference that United States switches order with Europe.")
+        col2.write("The highest distributed gains for over and under-earners were for people from Asia and Europe respectively, while the second lowest losses were for those in Canada and Europe for over and under-earners respectively.")
+        col2.write("South America had the lowest values in every aspect except losses of over-earners for which Canada had slightly less. ")
+        col2.write("Note that this graph has **two y-axes**. This is because the distributed capital gains and losses are one order of magnitude different, so only scaling them to different axes would make it possible to view.")
+        st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axes correspond to the capital gains/losses of over-earners, and the right axis to the gains/losses of under-earners.")
         st.write("We want to pint out that the here observed values are **NOT** representations of the whole continents of Asia, South America nor Europe. The data was reduced to these regions to make it more maneageable, but we do not have data for all the countries in these continents.")
         st.write("It is most likely that the countries with available data for this study are those with the highest GDP, since such detailed data may be more difficult to obtain from less developed countries.")
 
