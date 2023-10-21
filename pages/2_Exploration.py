@@ -55,8 +55,9 @@ elif sd == "Region of origin":
         col1, col2 = st.columns([4.5,5.5])
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country1.png')
         col2.write("On the graph to the left we are presenting the percentage of population from each region (country or continent) who earn over \$50,000 per year (over-earners).")
-        col2.write("We observe that the percentage of over earners is highes in Canada, followed by Asia, Europe, United States and the lowest being South America.") 
+        col2.write("We observe that the percentage of over earners is highest in Canada, followed by Asia, Europe, United States and the lowest being South America.") 
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
+        col2.write("The capital gains and losses of these regions ovserve a decreasing value in the same previously mentioned order, with the only difference that United States switches order with Europe.")
 
 
 elif sd == "Marital status":
