@@ -46,7 +46,7 @@ elif sd == "Working class and education":
         st.write("From these plots we can make the following conclusions:")
         st.markdown(" * In the previously mentioned order, there is steady increase of capital gains for over-earners, but amost steady decrease for under-earners, only masters and private sector staying on top of the other categories.")
         st.markdown(" * The capital losses of over-earners are lowest for: people who work on the private sector (followed by the state government), and those who have only a high school diploma. Other categories are increasing from left to right.")
-        st.markdown(" * On the other hand, they are lowest for under-earners when: they have a doctorate degree, or incorporated self employed people.")
+        st.markdown(" * On the other hand, the capital losses of under-earners are lowest when: they have a doctorate degree, or incorporated self employed people.")
         st.markdown(" * Capital losses for under-earners seems to slowly decreased in the previously mentioned order.")
   
 elif sd == "Region of origin":
@@ -54,7 +54,9 @@ elif sd == "Region of origin":
         st.subheader("Canada is the region with the highest amount of high earners, followed by Asia and then the US, while South America is the one at the bottom.")
         col1, col2 = st.columns([4.5,5.5])
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country1.png')
-        col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
+        col2.write("On the graph to the left we are presenting the percentage of population from each region (country or continent) who earn over \$50,000 per year (over-earners).")
+        col2.write("We observe that the percentage of over earners is highes in Canada, followed by Asia, Europe, United States and the lowest being South America.") 
+        col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
 
 
 elif sd == "Marital status":
