@@ -21,6 +21,8 @@ if sd == "Age and gender":
         st.subheader("The percentage of people earning over $50,000 peaks around 45 years old, men have double the chance to earn over that, and the gains and losses for man are also almost doubled.")
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png')
+        col2.write("On the left graph we can see the percentage of people who earns over $50,000 per year by age and gender. The percentage is approximately the same for both woman and man 25 years old or younger, but the genders quickly diverge for people between 25 and 45, with woman having only around 13% while for man it's around 30%.")
+        col2.write("For both genders we see a peak around 45 years, and in general the percentage for over-earner man is about 3 times higher than for woman.")
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex2.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex3.png')
