@@ -10,7 +10,7 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
         [
             "--------------",
             "Age and gender",
-            "Working sector and education", 
+            "Working class and education", 
             "Region of origin",   
             "Marital status"
         ]
