@@ -21,11 +21,14 @@ if sd == "Age and gender":
         st.subheader("The percentage of people earning over $50,000 peaks around 45 years old, men have double the chance to earn over that, and the gains and losses for man are also almost doubled.")
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png')
-        col2.write("On the left graph we can see the percentage of people who earns over $50,000 per year by age and gender. The percentage is approximately the same for both woman and man 25 years old or younger, but the genders quickly diverge for people between 25 and 45, with woman having only around 13% while for man it's around 30%.")
+        col2.write("On the left graph we can see the percentage of people who earns over $50,000 per year (over-earners) by age and gender. The percentage is approximately the same for both woman and man 25 years old or younger, but the genders quickly diverge for people between 25 and 45, with woman having only around 13% while for man it's around 30%.")
         col2.write("For both genders we see a peak around 45 years, and in general the percentage for over-earner man is about 3 times higher than for woman.")
+        st.write("Another factor to look at when considering differences in income is the reported capital gains and capital losses. The graphs below show the distributed gains and losses for both over-earners and under-earners.")
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex2.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex3.png')
+        st.write("We see that the capital gains increase by age for man, while for woman they peak around 45 years old. They are significantly higher for over-earner man compared to over-earner woman, yet roughly the same for under-earners.")
+        st.write("The capital losses are directly correlated to the gains. We see that for man and over-earner woman, the groups who reported more gains also reported more losses, but this trend does not hold for under-earner-woman. Although they roughly the lowest capital gain, they have by far the highest capital losses, only supassed by over-earner man between 25-65 years old.")
 
 
 elif sd == "Working sector and education":
