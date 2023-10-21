@@ -63,7 +63,7 @@ elif sd == "Region of origin":
         col2.write("The highest distributed gains for over and under-earners were for people from Asia and Europe respectively.")
         col2.write("South America had the lowest values in every aspect, except in gains of under-earners, for which Canada had slightly less.")
         col2.write("Canada also had the highest losses for the under-earner population, with twice the amount of Asia (second highest losses).")
-        st.write("###Note that this last graph had **two y-axes**. ")
+        st.write("### Note that this last graph had **two y-axes**. ")
         st.write("This is because the distributed capital gains and losses are one order of magnitude different, so only scaling them to different axes would make it possible to view.")
         st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axes correspond to the capital gains/losses of over-earners, and the right axis to the gains/losses of under-earners.")
         st.write("We want to pint out that the here observed values are **NOT** representations of the whole continents of Asia, South America nor Europe. The data was reduced to these regions to make it more maneageable, but we do not have data for all the countries in these continents.")
