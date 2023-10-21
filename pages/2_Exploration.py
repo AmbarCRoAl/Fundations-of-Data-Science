@@ -28,16 +28,23 @@ if sd == "Age and gender":
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex2.png')
         col2.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex3.png')
         st.write("We see that the capital gains increase by age for man, while for woman they peak around 45 years old. They are significantly higher for over-earner man compared to over-earner woman, yet roughly the same for under-earners.")
-        st.write("The capital losses are directly correlated to the gains. We see that for man and over-earner woman, the groups who reported more gains also reported more losses, but this trend does not hold for under-earner-woman. Although they roughly the lowest capital gain, they have by far the highest capital losses, only supassed by over-earner man between 25-65 years old.")
+        st.write("The capital losses are directly correlated to the gains. We see that for man and over-earner woman, the groups who reported more gains also reported more losses, but this trend does not hold for under-earner woman. Although they have roughly the lowest capital gains, they have the highest capital losses, only supassed by over-earner man between 25-65 years old.")
 
 
-elif sd == "Working sector and education":
-        st.subheader("The level of education determines your capital gains and losses in almost an identical way as the working sector you go to.")
+elif sd == "Working class and education":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Working sector and education</h1>", unsafe_allow_html=True) 
+        st.subheader("The level of education determines your capital gains and losses in almost an identical way as the working class you're part of.")
+        st.write("One would guess that the level of education and the working sector of an individual are independent traits, and contribute to that individual's income level in different ways. During this study we have found that this is not true, instead, these attriutes seem to determine people's capital gains and losses in almost an identical manner.")
+        st.write("If we place them in the orders:")
+        st.markdown(" * Highschool diploma followed by, some college, Bachellors, Masters and PhD degrees")
+        st.markdown(" * State goverment followed by, federal goverment, private sector, self employment (not incorporation), and self employed with incorporation")
+        st.write("We will see lines that follow almost an identical trend.")
+        st.write("Bellow I present such graphs. Notice that these graphs have **two y-axes.** This is because the capital gains and losses for groups who earned above $50,000 per year (over-earners) compared to those who earn under $50,000 per year (under-earners) are drastically higher, in some cases orders of magnitudes.")
+        st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axes correspond to the capital gains/losses of over-earners, and the right axis to the gains/losses of under-earners.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect1.png')
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect2.png')
 
-
+ 
 elif sd == "Region of origin":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Country of origin</h1>", unsafe_allow_html=True) 
         st.subheader("Canada is the region with the highest amount of high earners, followed by Asia and then the US, while South America is the one at the bottom.")
