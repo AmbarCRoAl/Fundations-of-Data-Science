@@ -18,10 +18,10 @@ sd = st.selectbox("Please select one:", #Drop Down Menu Name
 
 if sd == "Age and gender":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Age and gender</h1>", unsafe_allow_html=True) 
-        st.subheader("The percentage of people earning over $50,000 peaks around 45 years old, men have double the chance to earn over that, and the gains and losses for man are also almost doubled.")
+        st.subheader("The percentage of people earning over \$50,000 peaks around 45 years old, men have double the chance to earn over that, and the gains and losses for man are also almost doubled.")
         col1, col2 = st.columns(2)
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/age_sex1.png')
-        col2.write("On the left graph we can see the percentage of people who earns over $50,000 per year (over-earners) by age and gender. The percentage is approximately the same for both woman and man 25 years old or younger, but the genders quickly diverge for people between 25 and 45, with woman having only around 13% while for man it's around 30%.")
+        col2.write("On the left graph we can see the percentage of people who earns over \$50,000 per year (over-earners) by age and gender. The percentage is approximately the same for both woman and man 25 years old or younger, but the genders quickly diverge for people between 25 and 45, with woman having only around 13% while for man it's around 30%.")
         col2.write("For both genders we see a peak around 45 years, and in general the percentage for over-earner man is about 3 times higher than for woman.")
         st.write("Another factor to look at when considering differences in income is the reported capital gains and capital losses. The graphs below show the distributed gains and losses for both over-earners and under-earners.")
         col1, col2 = st.columns(2)
@@ -43,8 +43,12 @@ elif sd == "Working class and education":
         st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axes correspond to the capital gains/losses of over-earners, and the right axis to the gains/losses of under-earners.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect1.png')
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/educ_sect2.png')
-
- 
+        st.write("From these plots we can make the following conclusions:")
+        st.markdown(" * In the previously mentioned order, there is steady increase of capital gains for over-earners, but amost steady decrease for under-earners, only masters and private sector staying on top of the other categories.")
+        st.markdown(" * The capital losses of over-earners are lowest for: people who work on the private sector (followed by the state government), and those who have only a high school diploma. Other categories are increasing from left to right.")
+        st.markdown(" * On the other hand, they are lowest for under-earners when: they have a doctorate degree, or incorporated self employed people.")
+        st.markdown(" * Capital losses for under-earners seems to slowly decreased in the previously mentioned order.")
+  
 elif sd == "Region of origin":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Country of origin</h1>", unsafe_allow_html=True) 
         st.subheader("Canada is the region with the highest amount of high earners, followed by Asia and then the US, while South America is the one at the bottom.")
