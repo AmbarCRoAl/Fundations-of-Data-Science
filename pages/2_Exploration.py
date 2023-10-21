@@ -56,9 +56,11 @@ elif sd == "Region of origin":
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country1.png')
         col2.write("On the graph to the left we are presenting the percentage of population from each region (country or continent) who earn over \$50,000 per year (over-earners).")
         col2.write("We observe that the percentage of over earners is highest in Canada, followed by Asia, Europe, United States and the lowest being South America.") 
+        col1, col2 = st.columns(2)        
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/country2.png')
         col2.write("The capital gains and losses of these regions ovserve a decreasing value in the same previously mentioned order, with the only difference that United States switches order with Europe.")
-
+        st.write("We want to pint out that the here observed values are **NOT** representations of the whole continents of Asia, South America nor Europe. The data was reduced to these regions to make it more maneageable, but we do not have data for all the countries in these continents.")
+        st.write("It is most likely that the countries with available data for this study are those with the highest GDP, since such detailed data may be more difficult to obtain from less developed countries.")
 
 elif sd == "Marital status":
         st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Marital status</h1>", unsafe_allow_html=True) 
