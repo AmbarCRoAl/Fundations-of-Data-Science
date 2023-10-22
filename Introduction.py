@@ -42,10 +42,12 @@ st.divider()
 st.subheader('Want to see where you stand among the US population?')
 st.write('Upload your info here:')
 person_age = st.text_input('Age:')
+st.markdown(''':gray[\tPlease enter an integer.] ''')
 person_sex = st.text_input('Sex/Gender:')
 person_education = st.text_input('Education level:')
 person_industry = st.text_input('Work sector (industry, federal, etc):')
 person_country = st.text_input('Country of origin:')
 person_info = [person_age, person_sex, person_education, person_industry, person_country]
+
 
 
