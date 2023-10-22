@@ -78,6 +78,7 @@ elif sd == "Marital status":
         col2.write("We also note that never-married has the lowest percentage of over-earners, bellow 5%.")
         st.write("When we look at the patterns of these group's distributed capital gains, we observe the higher gains for over-earners in the married individuals and in widowed for under-earners. Both over and under-earners had the lowest capital gains when never married.")
         st.write("As for the distributed capital losses, there is almost a dirrect correlation to the capital gains. The only exceptions being over-earner divorced people going from 2nd to 4th and married under-earners going from 3rd to the lowest value, when looked at gains to losses.")
+        st.writr("Here is a graph containing the plots of distributed capital gains and losses.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/marital1.png')
         st.write("#### Note that this last graph had **two y-axes**. ")
         st.write("This is because the distributed capital gains from over-earners is an order of magnitude higher than any other capital fluctuation, so only scaling it to a different axis would make it possible to view.")
