@@ -38,16 +38,30 @@ st.markdown("We mainly focused on 3 things: \n * Percentage of people who earned
 st.write("Since some groups may simply have more people than others (for example, there is more people from the US than any other country), plainly summing the capital gains or losses would be biased to the amount of people in that group. To come around this issue, we divided the gains by the sum of all people in that group, so the amounts presented in this study is total gains/losses per person.")
 
 
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/Post-tax%20household%20income%20summary_transverse.csv'
+df_CEW = pd.read_csv(url)
+
 st.divider()
 st.subheader('Want to see where you stand among the US population?')
-st.write('Upload your info here:')
+st.markdown(''' The interactive information provided bellow is based on the data provided by the US census webpage. 
+The post-tax median income estimate and margin of error was provided for certain groups for the years 2021 and 2022.
+This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html.
+''')
+st.markdown('#### Upload your info here:')
 person_age = st.text_input('Age:')
 st.markdown(''':gray[&emsp;Please enter an integer.] ''')
 person_sex = st.text_input('Sex/Gender:')
+st.markdown(''':gray[&emsp;Please enter woman, man or none.] ''')
 person_education = st.text_input('Education level:')
-person_industry = st.text_input('Work sector (industry, federal, etc):')
-person_country = st.text_input('Country of origin:')
-person_info = [person_age, person_sex, person_education, person_industry, person_country]
+st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelor', 'Master' or "Doctorate'.] ''')
+person_industry = st.text_input('Work sector:')
+st.markdown(''':gray[&emsp;Please enter 'self employed', 'incorporated self employed', 'private sector', 'state government' or 'federal goverment'.] ''')
+person_country = st.text_input('Region of origin:')
+st.markdown(''':gray[&emsp;Please enter United_States, Canada, South_America, Europe or Asia.] ''')
+person_income = st.text_input('Anual income:')
+st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
+person_info = [person_age, person_sex, person_education, person_industry, person_country, person_income]
+
 
 
 
