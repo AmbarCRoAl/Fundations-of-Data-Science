@@ -43,7 +43,7 @@ df_CEW = pd.read_csv(url)
 
 st.divider()
 st.subheader('Want to see where you stand among the US population?')
-st.markdown(''' The interactive information provided bellow is based on the data provided by the US census webpage. 
+st.markdown(''' The interactive information given bellow is based on the data provided by the US census webpage. 
 The post-tax median income estimate and margin of error was provided for certain groups for the years 2021 and 2022.
 This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html.
 ''')
@@ -55,7 +55,7 @@ st.markdown(''':gray[&emsp;Please enter woman, man or none.] ''')
 person_education = st.text_input('Education level:')
 st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelor', 'Master' or "Doctorate'.] ''')
 person_industry = st.text_input('Work sector:')
-st.markdown(''':gray[&emsp;Please enter 'self employed', 'incorporated self employed', 'private sector', 'state government' or 'federal goverment'.] ''')
+st.markdown(''':gray[&emsp;Please enter 'self employed', 'incorporated self employed', 'private sector', 'state government' or &emsp;'federal goverment'.] ''')
 person_country = st.text_input('Region of origin:')
 st.markdown(''':gray[&emsp;Please enter United_States, Canada, South_America, Europe or Asia.] ''')
 person_income = st.text_input('Anual income:')
