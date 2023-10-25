@@ -64,7 +64,7 @@ person_income = st.text_input('Anual income:')
 st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
 person_info = [person_age, person_sex, person_education, person_country, person_industry, person_income]
 
-st.markdown(''':red[Note that if you don't use the specific words provided the information won't be displayed.] ''')
+st.markdown(''':red[Note that if you don't use the specific words provided, the information won't be displayed.] ''')
 
 
 
