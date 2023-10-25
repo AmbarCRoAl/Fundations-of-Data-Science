@@ -45,7 +45,8 @@ st.divider()
 st.subheader('Want to see where you stand among the US population?')
 st.markdown(''' The interactive information given bellow is based on the data provided by the US census webpage. 
 The post-tax median income estimate and margin of error was provided for certain groups for the years 2021 and 2022.
-This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html.
+This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html. We used the median
+income from 2022. 
 ''')
 st.markdown('#### Upload your info here:')
 person_age = st.text_input('Age:')
