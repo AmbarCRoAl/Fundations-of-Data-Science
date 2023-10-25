@@ -53,14 +53,15 @@ st.markdown(''':gray[&emsp;Please enter an integer.] ''')
 person_sex = st.text_input('Sex/Gender:')
 st.markdown(''':gray[&emsp;Please enter woman, man or none.] ''')
 person_education = st.text_input('Education level:')
-st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelor', 'Master' or "Doctorate'.] ''')
+st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelor' or 'Graduate education'.] ''')
+person_country = st.text_input('Country of origin:')
+st.markdown(''':gray[&emsp;Please enter US or other.] ''')
 person_industry = st.text_input('Work sector:')
 st.markdown(''':gray[&emsp;Please enter 'self employed', 'incorporated self employed', 'private sector', 'state government' or &emsp;'federal goverment'.] ''')
-person_country = st.text_input('Region of origin:')
-st.markdown(''':gray[&emsp;Please enter United_States, Canada, South_America, Europe or Asia.] ''')
 person_income = st.text_input('Anual income:')
 st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
-person_info = [person_age, person_sex, person_education, person_industry, person_country, person_income]
+person_info = [person_age, person_sex, person_education, person_country, person_industry, person_income]
+
 
 
 
