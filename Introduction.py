@@ -410,7 +410,7 @@ if person_info[4] == 'woman':
       median_keys.append('Female householder')
 else:
   if person_info[4] == 'man':
-    person_info[4] == 'Male'
+    person_info[4] = 'Male'
     if person_info[5] == 'married':
       median_keys.append('Married-couple')
     else:
