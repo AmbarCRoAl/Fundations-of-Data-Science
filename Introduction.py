@@ -474,8 +474,12 @@ for index, row in df_census.iterrows():
               sum_all += row['fnlwgt']
               if row['income']:
                 sum_highearners += row['fnlwgt']
-percentage_highearners = sum_highearners/sum_all
-
+try:
+  percentage_highearners = sum_highearners/sum_all
+except ZeroDivisionError:
+  st.write("There was no one in the dataset that matched your exact description.")
+  percentage_highearners = "unknown"
+  
 #Creating dataset of the gains/losses for people with these atributes as a function of index_forX
 key_words = ['income', 'age', 'education', 'countr', 'sex', 'mariatl', 'workclass']
 corresponding_index = [0, 1, 2, 3, 4, 5, 6]
