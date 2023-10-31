@@ -69,6 +69,14 @@ person_info = [person_income, person_age, person_education, person_country, pers
 
 st.markdown(''':red[Note that if you don't use the specific words provided, the information won't be displayed.] ''')
 
+sd = st.selectbox(
+        "Select a plot type", #Drop Down Menu Name
+        [
+            "Violin plot", #First option in menu
+            "Histogram",   #Second option in menu
+            "Joint Plot"  #Third option in menu
+        ]
+    )
 
 
 
