@@ -256,6 +256,11 @@ for i in range(num):
 url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/Post-tax%20household%20income%20summary_transverse.csv'
 df_summary = pd.read_csv(url)
 
+table = {'Group':groups, 'Percentage of high earners':ratio_people,
+         'Normalized gain for high earners':ratio_gain_over,
+         'Normalized loss for high earners':ratio_loss_over,
+         'Normalized gain for low earners':ratio_gain_under,
+         'Normalized loss for low earners':ratio_loss_under   }
 df_table = pd.DataFrame(table)
 st.table(df_table)
 
