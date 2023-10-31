@@ -533,7 +533,6 @@ if new_keys[0] == 'age':
       (df_census[new_keys[1]] == person_info[indeces[1]])&
                   (include_zeros or df_census['capital-gain']) )
   elif len(new_keys)== 3:
-    print("\n\nWe here?")
     conditions = (
       (df_census[new_keys[0]] >= person_info[indeces[0]]-5) & (df_census[new_keys[0]] <= person_info[indeces[0]]+5) & 
       (df_census[new_keys[1]] == person_info[indeces[1]]) &
