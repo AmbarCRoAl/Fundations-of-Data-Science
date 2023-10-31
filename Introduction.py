@@ -600,7 +600,7 @@ st.write("Amount of people with specified characteristics:", sum_all)
 fig = plt.figure(figsize=(12, 6))
 sns.jointplot(data=selected_df, x=key_words[index_forX], y='capital-gain')
 plt.show()
-#st.pyplot(fig)
+st.pyplot(fig)
 
   
 
