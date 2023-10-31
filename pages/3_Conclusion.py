@@ -245,6 +245,16 @@ for i in range(num):
 
 
 
+
+
 #*********************************************************************************************************
 #CODE FOR WEB-APP IMPLEMENTATION --------------------------------------------------------------------------
 #*********************************************************************************************************
+
+
+
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/Post-tax%20household%20income%20summary_transverse.csv'
+df_summary = pd.read_csv(url)
+
+df_table = pd.DataFrame(table)
+
