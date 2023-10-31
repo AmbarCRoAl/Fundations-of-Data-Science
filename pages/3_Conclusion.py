@@ -22,10 +22,6 @@ df_census = pd.read_csv(url)
 # "weighted tallies" of any specified socio-economic characteristics of the population.
 # People with similar demographic characteristics should have similar weights.
 
-print("Number of null values:\n", df_census.isnull().sum())
-print('Description:\n', df_census.describe())
-print('\n\nCorrelations:\n', df_census.corr())
-print('\n\nActual Dataset:\n', df_census)
 
 #Cleaning data and summing different attributes
 df1 = df_census.copy()
@@ -187,7 +183,6 @@ marital_married = {'Married-civ-spouse':'Married', 'Married-spouse-absent':'Marr
 df1['income'] = df1['income'].replace(string_to_float_income)
 df1['countr'] = df1['countr'].replace(country_to_regions)
 df1['mariatl'] = df1['mariatl'].replace(marital_married)
-print('\n\nNew modified data frame:\n', df1.head(10))
 
 #Sum of fnlwgt for different types of attributes
 groups = ['f_under25', 'f_25to45', 'f_45to65', 'f_over65', 'm_under25',
@@ -251,5 +246,5 @@ for i in range(num):
 
 
 #*********************************************************************************************************
-#CODE FOR WEBAPP IMPLEMENTATION --------------------------------------------------------------------------
+#CODE FOR WEB-APP IMPLEMENTATION --------------------------------------------------------------------------
 #*********************************************************************************************************
