@@ -257,4 +257,5 @@ url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/m
 df_summary = pd.read_csv(url)
 
 df_table = pd.DataFrame(table)
+st.table(df_table)
 
