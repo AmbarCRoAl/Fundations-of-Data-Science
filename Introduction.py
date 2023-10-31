@@ -594,9 +594,11 @@ selected_df = df_census[conditions].copy()
 #PLOTTING AND DISPLAY ----------------------------------------------------------------
 
 
-fig = plt.figure(figsize=(12, 6))
 st.write("Percentage of over-earners:", percentage_highearners)
 st.write("Amount of people with specified characteristics:", sum_all)
+st.write(selected_df[key_words[index_forX]])
+st.write(selected_df['capital-gain'])
+fig = plt.figure(figsize=(12, 6))
 sns.jointplot(data=selected_df, x=key_words[index_forX], y='capital-gain')
 
 st.pyplot(fig)
