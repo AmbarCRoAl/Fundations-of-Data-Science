@@ -74,6 +74,10 @@ kids = st.text_input('Do you have kids?')
 st.markdown(''':gray[&emsp;Please enter yes or no.] ''')
 person_income = st.text_input('Anual income:')
 st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
+
+
+person_age = int(person_age)
+person_income = float(person_income)
 person_info = [person_income, person_age, person_education, person_country, person_sex, person_marital, person_industry]
 
 st.markdown(''':red[Note that if you don't use the specific words provided, the information won't be displayed.] ''')
