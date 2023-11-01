@@ -390,11 +390,11 @@ else:
 #Determining the country of origin
 if person_info[3] == 'US':
   median_keys.append('Native-born')
-  person_info[3] = 'United-States'
+  person_info[3] = 'United_States'
 else:
   median_keys.append('Foreign-born')
   if person_info[3] == 'South America':
-    person_info[3] = 'South-America'
+    person_info[3] = 'South_America'
 
 #Determining the sex/gender
 if person_info[4] == 'woman':
