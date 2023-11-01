@@ -591,7 +591,7 @@ selected_df = df1[conditions].copy()
 
 #PLOTTING AND DISPLAY ----------------------------------------------------------------
 
-if type(percentage_highearners) == str():
+if isinstance(percentage_highearners, str):
   st.write("Percentage of over-earners:", percentage_highearners)
 else:
   st.write("Percentage of over-earners:", percentage_highearners*100)
