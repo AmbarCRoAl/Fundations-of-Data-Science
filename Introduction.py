@@ -615,6 +615,17 @@ def color_coding(row):
 table = {'Group':median_keys, 'Median income':median_info }
 df_table = pd.DataFrame(table)
 st.dataframe(df_table.style.apply(color_coding, axis=1), column_config= {
-  help='''Color red: your earnings are under the median for this population\n 
-        Color green: your earnings are over the median for this population'''
+  "widgets": st.column_config.Column( help = '''Color red: your earnings are under the median for this population\n 
+        Color green: your earnings are over the median for this population''')
 })
+
+st.data_editor(
+    data_df,
+    column_config={
+        "widgets": st.column_config.Column(
+            "Streamlit Widgets",
+            help="Streamlit **widget** commands 🎈",
+            width="medium",
+            required=True,
+        )
+    },
