@@ -601,10 +601,9 @@ name = "Capital gains with the same "
 for i in selected_cond:
   n = i + ', '
   name += n
-st.write(#### name)
+st.write("#### {name}")
 fig = plt.figure(figsize=(12, 6))
 sns.jointplot(data=selected_df, x=key_words[index_forX], y='capital-gain')
-
 plt.show()
 st.pyplot(fig)
 
