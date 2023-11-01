@@ -602,8 +602,8 @@ for i in range(1, len(selected_cond)):
   n = ', ' + i 
   name += n
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
-fig = plt.figure(figsize=(12, 6))
-sns.jointplot(data=selected_df, x=key_words[index_forX], y='capital-gain')
+ax1 = selected_df.plot.scatter(x=key_words[index_forX],
+      y='capital-gain', c='olivedrab', figsize=[20,15])
 plt.show()
 st.pyplot(fig)
 
