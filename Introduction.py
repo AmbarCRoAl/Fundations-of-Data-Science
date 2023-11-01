@@ -597,11 +597,11 @@ st.write("Percentage of over-earners:", percentage_highearners)
 st.write("Amount of people with specified characteristics:", sum_all)
 #st.write(selected_df[key_words[index_forX]])
 #st.write(selected_df['capital-gain'])
-name = "Capital gains with the same "
-for i in selected_cond:
-  n = i + ', '
+name = "Capital gains with the same: " + selected_cond[0]
+for i in range(1, len(selected_cond)):
+  n = ', ' + i 
   name += n
-st.markdown(f"""  #### "<span style="color:green">{name}</span>"  """,  unsafe_allow_html=True)
+st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
 fig = plt.figure(figsize=(12, 6))
 sns.jointplot(data=selected_df, x=key_words[index_forX], y='capital-gain')
 plt.show()
