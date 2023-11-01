@@ -619,13 +619,4 @@ st.dataframe(df_table.style.apply(color_coding, axis=1), column_config= {
         Color green: your earnings are over the median for this population''')
 })
 
-st.data_editor(
-    data_df,
-    column_config={
-        "widgets": st.column_config.Column(
-            "Streamlit Widgets",
-            help="Streamlit **widget** commands 🎈",
-            width="medium",
-            required=True,
-        )
-    },
+
