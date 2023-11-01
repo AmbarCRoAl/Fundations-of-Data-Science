@@ -605,7 +605,7 @@ st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_all
 ax1 = selected_df.plot.scatter(x=key_words[index_forX],
       y='capital-gain', c='olivedrab', figsize=[20,15])
 plt.show()
-st.pyplot(fig)
+st.pyplot(ax1)
 
   
 
