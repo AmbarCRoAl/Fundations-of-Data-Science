@@ -300,5 +300,7 @@ table = {'Group':groups, 'Percentage of high earners':ratio_people,
          'Normalized gain for low earners':ratio_gain_under,
          'Normalized loss for low earners':ratio_loss_under   }
 df_table = pd.DataFrame(table)
-st.dataframe(df_table.style.highlight_max(axis=0, color='green'))
+st.dataframe(df_table.style.highlight_max(subset=['Percentage of high earners', 'Normalized gain for high earners',
+         'Normalized loss for high earners', 'Normalized gain for low earners', 'Normalized loss for low earners'],
+          axis=0, color='green'))
 
