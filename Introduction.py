@@ -41,10 +41,10 @@ st.write("Since some groups may simply have more people than others (for example
 
 st.divider()
 st.subheader('Want to see where you stand among the US population?')
-st.markdown(''' The interactive information given bellow is based on the data provided by the US census webpage. 
-The post-tax median income estimate and margin of error was provided for certain groups for the years 2021 and 2022.
-This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html. We used the median
-income from 2022. 
+st.markdown(''' The interactive information given bellow is based on the data previously described and a summary table provided 
+by the US census webpage. There, the post-tax median income estimate and margin of error were provided for certain groups for the 
+years 2021 and 2022. This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html. 
+We used the median income from 2022. 
 ''')
 
 
@@ -591,7 +591,7 @@ selected_df = df1[conditions].copy()
 #PLOTTING AND DISPLAY ----------------------------------------------------------------
 
 
-st.write("Percentage of over-earners:", percentage_highearners)
+st.write("Percentage of over-earners:", percentage_highearners*100)
 st.write("Amount of people with specified characteristics:", sum_all)
 #st.write(selected_df[key_words[index_forX]])
 #st.write(selected_df['capital-gain'])
