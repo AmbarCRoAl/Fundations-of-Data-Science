@@ -611,8 +611,10 @@ name = "Median income for people with similar characteristics to you"
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
 def color_coding(row):
     return ['background-color:red'] * len(
-        row) if row['Median income'] <= person_info[0] else ['background-color:green'] * len(row)
+        row) if row['Median income'] >= person_info[0] else ['background-color:green'] * len(row)
 table = {'Group':median_keys, 'Median income':median_info }
 df_table = pd.DataFrame(table)
-st.dataframe(df_table.style.apply(color_coding, axis=1))
-st.dataframe(df_table)
+st.dataframe(df_table.style.apply(color_coding, axis=1), column_config= {
+  help='''Color red: your earnings are under the median for this population\n 
+        Color green: your earnings are over the median for this population'''
+})
