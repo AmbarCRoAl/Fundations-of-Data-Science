@@ -490,7 +490,7 @@ index_forX = st.selectbox(
 selected_cond = st.multiselect(
     'Pick the characteristics to match:',
     [ 'age', 'education', 'country', 'sex', 'marital', 'workclass'])
-
+st.markdown(''':gray[&emsp;NOTE: if you select age as the first attribute, we will show people +-5 years your age, if it's at any other position, it will show only the people that have exactly your age.] ''')
 include_zeros = st.selectbox('Do you want to include points in the data for 0 capital gain?', 
                              ['yes', 'no']) 
 # ------------------------------------------------------------------------------------------------
@@ -595,7 +595,7 @@ st.write("Percentage of over-earners:", percentage_highearners)
 st.write("Amount of people with specified characteristics:", sum_all)
 #st.write(selected_df[key_words[index_forX]])
 #st.write(selected_df['capital-gain'])
-name = "Capital gains with the same: " + selected_cond[0]
+name = "Capital gains for people with the same: " + selected_cond[0]
 for i in range(1, len(selected_cond)):
   n = ', ' + selected_cond[i] 
   name += n
