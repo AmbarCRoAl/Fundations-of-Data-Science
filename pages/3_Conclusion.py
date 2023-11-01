@@ -256,11 +256,36 @@ st.title("What can we learn from this datasets?")
 
 name = "About the probability of earning over \$50,000 per year"
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
-
+st.markdown('''
+ * We observed the highest percentage of people who earned over $50,000 per year (over-earners) in those individuals who
+were incorporated self employed, with over half of this population being over-earners. After this group came males in the ages from 45 to 
+65 and married people, with 47% and 43% respectively. 
+ * The lowest percentage of under-earners is for individuals under 25 years old,
+females having less than 1% and males around 1.5%, closely followd by never married people with 4%.
+ * We could also determine that the percentage of over-earners increases with education level, and reaches a peak around 45 years
+old for both man and woman. The percentage is always higher for the male population.
+ * We believe it is important to notice that some of these attributes may be correlated. People with higher education tend to have higher marriage 
+rates, and their inclusion into the workforce happens at a later age. 
+ * We may not draw many conclusions about the regions used for 
+this analysis, since it seems the countries were selected for those with the highest quality of life. 
+''')
 
 name = "About the capital gains and capital losses"
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
-
+st.markdown('''
+ * In general, groups with higher capital gains also observe higher capital losses, but the order of magnitude for the ater is typically one or two 
+times higher. Over-earners consistently report higher capital fluctuations, typically one order of magnitude higher than the under-earners. 
+   *   The only group that doesn't seem to follow this trend are the under-earner Canadians, with the second lowest caputal gain by country and yet the 
+   highest capital loss of all the under-earner groups. 
+ * Married people reported more than double the amount of capital gains (and losses) than any other marital status, but this may well be because this most 
+ likely is the amount accumulated by both partners working, while other groups account for single individuals. 
+ * For over-earners, males dominate, making almost 6 times as much as the females in capital gains for ages over 65. While for under-earners, the female 
+population sees slightly higher capital gains in almost every age. 
+ * The correlation between people's capital gain when comparing their level of education and working sector suggest that these may not be completely 
+ independent attributes. Instead, it is possible that the individuals with a certain level of education choose careers at the working sectors that reflect
+ the same capital gains and losses trends. 
+ * The group with highest capital gains are the incorporated self employed, closely after being the people with Doctorate degrees. 
+''')
 
 
 
@@ -275,5 +300,5 @@ table = {'Group':groups, 'Percentage of high earners':ratio_people,
          'Normalized gain for low earners':ratio_gain_under,
          'Normalized loss for low earners':ratio_loss_under   }
 df_table = pd.DataFrame(table)
-st.table(df_table)
+st.dataframe(df_table.style.highlight_max(axis=0))
 
