@@ -312,8 +312,6 @@ ratio_loss_under = np.zeros(num)
 ratio_counts = np.zeros(num)
 
 for i in range(num):
-  #print("\ngroup:", groups[i])
-  #print('sum of people:', sum_of_people[i], 'and sum of all people:', sum_all_people[i])
   if sum_all_people[i] == 0:
     print('There was no person in the group ', groups[i], 'who earned over 50K in this dataframe')
     ratio_people[i] = 0
@@ -464,7 +462,7 @@ if person_info[5]== 'widowed':
 #Getting the percentage
 sum_all = 0
 sum_highearners = 0
-for index, row in df_census.iterrows():
+for index, row in df1.iterrows():
   if row['age'] >= person_info[1]-5 and row['age'] <= person_info[1]+5:
     if row['education'] == person_info[2]:
       if row['workclass'] == person_info[6]:
@@ -525,69 +523,69 @@ for i in range(len(selected_cond)):
 
 if new_keys[0] == 'age':
   if len(new_keys)== 1:
-    conditions = ((df_census[new_keys[0]] >= person_info[indeces[0]]-5) & (df_census[new_keys[0]] <= person_info[indeces[0]]+5) &
-                  (include_zeros or df_census['capital-gain']) )
+    conditions = ((df1[new_keys[0]] >= person_info[indeces[0]]-5) & (df1[new_keys[0]] <= person_info[indeces[0]]+5) &
+                  (include_zeros or df1['capital-gain']) )
   elif len(new_keys)== 2:
     conditions = (
-      (df_census[new_keys[0]] >= person_info[indeces[0]]-5) & (df_census[new_keys[0]] <= person_info[indeces[0]]+5) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]])&
-                  (include_zeros or df_census['capital-gain']) )
+      (df1[new_keys[0]] >= person_info[indeces[0]]-5) & (df1[new_keys[0]] <= person_info[indeces[0]]+5) & 
+      (df1[new_keys[1]] == person_info[indeces[1]])&
+                  (include_zeros or df1['capital-gain']) )
   elif len(new_keys)== 3:
     conditions = (
-      (df_census[new_keys[0]] >= person_info[indeces[0]]-5) & (df_census[new_keys[0]] <= person_info[indeces[0]]+5) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-      (df_census[new_keys[2]] == person_info[indeces[2]])&
-                  (include_zeros or df_census['capital-gain']))
+      (df1[new_keys[0]] >= person_info[indeces[0]]-5) & (df1[new_keys[0]] <= person_info[indeces[0]]+5) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+      (df1[new_keys[2]] == person_info[indeces[2]])&
+                  (include_zeros or df1['capital-gain']))
   elif len(new_keys)== 4:
     conditions = (
-      (df_census[new_keys[0]] >= person_info[indeces[0]]-5) & (df_census[new_keys[0]] <= person_info[indeces[0]]+5) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-      (df_census[new_keys[2]] == person_info[indeces[2]]) &
-      (df_census[new_keys[3]] == person_info[indeces[3]])&
-                  (include_zeros or df_census['capital-gain']))
+      (df1[new_keys[0]] >= person_info[indeces[0]]-5) & (df1[new_keys[0]] <= person_info[indeces[0]]+5) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+      (df1[new_keys[2]] == person_info[indeces[2]]) &
+      (df1[new_keys[3]] == person_info[indeces[3]])&
+                  (include_zeros or df1['capital-gain']))
   elif len(new_keys)== 5:
     conditions = (
-      (df_census[new_keys[0]] >= person_info[indeces[0]]-5) & (df_census[new_keys[0]] <= person_info[indeces[0]]+5) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-      (df_census[new_keys[2]] == person_info[indeces[2]]) &
-      (df_census[new_keys[3]] == person_info[indeces[3]]) &
-      (df_census[new_keys[4]] == person_info[indeces[4]])&
-                  (include_zeros or df_census['capital-gain'])
+      (df1[new_keys[0]] >= person_info[indeces[0]]-5) & (df1[new_keys[0]] <= person_info[indeces[0]]+5) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+      (df1[new_keys[2]] == person_info[indeces[2]]) &
+      (df1[new_keys[3]] == person_info[indeces[3]]) &
+      (df1[new_keys[4]] == person_info[indeces[4]])&
+                  (include_zeros or df1['capital-gain'])
     )
 else:
   if len(new_keys)== 1:
-    conditions = ((df_census[new_keys[0]] == person_info[indeces[0]])&
-                  (include_zeros or df_census['capital-gain']))
+    conditions = ((df1[new_keys[0]] == person_info[indeces[0]])&
+                  (include_zeros or df1['capital-gain']))
   elif len(new_keys)== 2:
     conditions = (
-      (df_census[new_keys[0]] == person_info[indeces[0]]) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-                  (include_zeros or df_census['capital-gain']))
+      (df1[new_keys[0]] == person_info[indeces[0]]) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+                  (include_zeros or df1['capital-gain']))
   elif len(new_keys)== 3:
     conditions = (
-      (df_census[new_keys[0]] == person_info[indeces[0]]) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-      (df_census[new_keys[2]] == person_info[indeces[2]])&
-                  (include_zeros or df_census['capital-gain']))
+      (df1[new_keys[0]] == person_info[indeces[0]]) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+      (df1[new_keys[2]] == person_info[indeces[2]])&
+                  (include_zeros or df1['capital-gain']))
   elif len(new_keys)== 4:
     conditions = (
-      (df_census[new_keys[0]] == person_info[indeces[0]]) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-      (df_census[new_keys[2]] == person_info[indeces[2]]) &
-      (df_census[new_keys[3]] == person_info[indeces[3]])&
-                  (include_zeros or df_census['capital-gain']))
+      (df1[new_keys[0]] == person_info[indeces[0]]) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+      (df1[new_keys[2]] == person_info[indeces[2]]) &
+      (df1[new_keys[3]] == person_info[indeces[3]])&
+                  (include_zeros or df1['capital-gain']))
   elif len(new_keys)== 5:
     conditions = (
-      (df_census[new_keys[0]] == person_info[indeces[0]]) & 
-      (df_census[new_keys[1]] == person_info[indeces[1]]) &
-      (df_census[new_keys[2]] == person_info[indeces[2]]) &
-      (df_census[new_keys[3]] == person_info[indeces[3]]) &
-      (df_census[new_keys[4]] == person_info[indeces[4]]) &
-                  (include_zeros or df_census['capital-gain'])
+      (df1[new_keys[0]] == person_info[indeces[0]]) & 
+      (df1[new_keys[1]] == person_info[indeces[1]]) &
+      (df1[new_keys[2]] == person_info[indeces[2]]) &
+      (df1[new_keys[3]] == person_info[indeces[3]]) &
+      (df1[new_keys[4]] == person_info[indeces[4]]) &
+                  (include_zeros or df1['capital-gain'])
     )
 
 # Create a duplicate DataFrame with selected conditions
-selected_df = df_census[conditions].copy()
+selected_df = df1[conditions].copy()
 
 
 #PLOTTING AND DISPLAY ----------------------------------------------------------------
