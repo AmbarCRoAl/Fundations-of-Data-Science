@@ -252,7 +252,7 @@ for i in range(num):
 #*********************************************************************************************************
 
 
-st.title("What can we learn from this datasets?")
+st.title("What can we learn from this dataset?")
 
 name = "About the probability of earning over \$50,000 per year"
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
@@ -300,5 +300,5 @@ table = {'Group':groups, 'Percentage of high earners':ratio_people,
          'Normalized gain for low earners':ratio_gain_under,
          'Normalized loss for low earners':ratio_loss_under   }
 df_table = pd.DataFrame(table)
-st.dataframe(df_table.style.highlight_max(axis='columns', color='green'))
+st.dataframe(df_table.style.highlight_max(axis=0, color='green'))
 
