@@ -476,7 +476,7 @@ for index, row in df1.iterrows():
 try:
   percentage_highearners = sum_highearners/sum_all
 except ZeroDivisionError:
-  st.write("***There was no one in the dataset that matched your exact description.***")
+  st.write("**There was no one in the dataset that matched your exact description. If there is data display in the graph, this corresponds to your previous selection.**")
   percentage_highearners = "unknown"
   
 #Creating dataset of the gains/losses for people with these atributes as a function of index_forX
