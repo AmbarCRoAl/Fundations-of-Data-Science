@@ -252,6 +252,17 @@ for i in range(num):
 #*********************************************************************************************************
 
 
+st.title("What can we learn from this datasets?")
+
+name = "About the probability of earning over \$50,000 per year"
+st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
+
+
+name = "About the capital gains and capital losses"
+st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
+
+
+
 
 url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/Post-tax%20household%20income%20summary_transverse.csv'
 df_summary = pd.read_csv(url)
