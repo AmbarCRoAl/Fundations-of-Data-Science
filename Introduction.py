@@ -476,7 +476,7 @@ for index, row in df1.iterrows():
 try:
   percentage_highearners = sum_highearners/sum_all
 except ZeroDivisionError:
-  st.write("There was no one in the dataset that matched your exact description.")
+  st.write("***There was no one in the dataset that matched your exact description.***")
   percentage_highearners = "unknown"
   
 #Creating dataset of the gains/losses for people with these atributes as a function of index_forX
@@ -591,8 +591,10 @@ selected_df = df1[conditions].copy()
 
 #PLOTTING AND DISPLAY ----------------------------------------------------------------
 
-
-st.write("Percentage of over-earners:", percentage_highearners*100)
+if type(percentage_highearners) == str():
+  st.write("Percentage of over-earners:", percentage_highearners)
+else:
+  st.write("Percentage of over-earners:", percentage_highearners*100)
 st.write("Amount of people with specified characteristics:", sum_all)
 #st.write(selected_df[key_words[index_forX]])
 #st.write(selected_df['capital-gain'])
@@ -606,6 +608,9 @@ selected_df.plot.scatter(x=key_words[index_forX],
       y='capital-gain', c='olivedrab', ax = ax)
 plt.show()
 st.pyplot(fig)
+
+
+
 
 name = "Median income for people with similar characteristics to you"
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
