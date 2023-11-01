@@ -63,7 +63,7 @@ st.markdown(''':gray[&emsp;Please enter an integer.] ''')
 person_sex = st.text_input('Sex/Gender:')
 st.markdown(''':gray[&emsp;Please enter woman, man or none.] ''')
 person_education = st.text_input('Education level:')
-st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelor', 'Masters', or 'Doctorate'.] ''')
+st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelors', 'Masters', or 'Doctorate'.] ''')
 person_country = st.text_input('Country of origin:')
 st.markdown(''':gray[&emsp;Please enter US, Canada, Asia, South America or Europe.] ''')
 person_industry = st.text_input('Work sector:')
@@ -380,7 +380,7 @@ else:
     median_keys.append('Some college')
     person_info[2] = "Some-college"
   else:
-    if person_info[2] == 'Bachelor':
+    if person_info[2] == 'Bachelors':
       median_keys.append("Bachelor's degree or higher")
     if person_info[2] == 'Masters':
       median_keys.append("Bachelor's degree or higher")
