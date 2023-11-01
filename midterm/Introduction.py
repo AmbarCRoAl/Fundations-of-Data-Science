@@ -489,7 +489,7 @@ index_forX = st.selectbox(
     'Pick the value for the x-axis:',
     [ 'age', 'education', 'country', 'sex', 'marital', 'workclass'])
 selected_cond = st.multiselect(
-    'Pick the characteristics to match:',
+    'Pick up to 5 characteristics to match:',
     [ 'age', 'education', 'country', 'sex', 'marital', 'workclass'])
 st.markdown(''':gray[&emsp;NOTE: if you select age as the first attribute, we will show people +-5 years your age, if it's at any other position, it will show only the people that have exactly your age.] ''')
 include_zeros = st.selectbox('Do you want to include points in the data for 0 capital gain?', 
