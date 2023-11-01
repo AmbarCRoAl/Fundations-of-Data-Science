@@ -599,7 +599,7 @@ st.write("Amount of people with specified characteristics:", sum_all)
 #st.write(selected_df['capital-gain'])
 name = "Capital gains with the same: " + selected_cond[0]
 for i in range(1, len(selected_cond)):
-  n = ', ' + i 
+  n = ', ' + selected_cond[i] 
   name += n
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
 ax1 = selected_df.plot.scatter(x=key_words[index_forX],
