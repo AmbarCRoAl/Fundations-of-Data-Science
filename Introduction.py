@@ -603,10 +603,10 @@ for i in range(1, len(selected_cond)):
   name += n
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
 fig, ax = plt.subplots(figsize=[20,15])
-ax1 = selected_df.plot.scatter(x=key_words[index_forX],
+selected_df.plot.scatter(x=key_words[index_forX],
       y='capital-gain', c='olivedrab', ax = ax)
 plt.show()
-st.pyplot(ax1)
+st.pyplot(fig)
 
   
 
