@@ -79,12 +79,6 @@ st.markdown(''':red[Please complete every box to see the rest.] ''')
 st.markdown(''':red[Note that if you don't use the specific words provided, the information won't be displayed.] ''')
 
 
-person_age = int(person_age)
-person_income = float(person_income)
-person_info = [person_income, person_age, person_education, person_country, person_sex, person_marital, person_industry]
-
-
-
 
 
 
@@ -352,6 +346,12 @@ df_summary = pd.read_csv(url)
 # We will also show the percentage with all those attributes who earned over $50,000, and the gains in a violin plot
 # Here onwards, the median_ arrays correspond to information extracted from the census dataset, and the order of info
 #   is age, education, country-of-origin and sex/marital, corresponding to indeces in person_info of 1, 2, 3, and 4/5.
+
+person_age = int(person_age)
+person_income = float(person_income)
+person_info = [person_income, person_age, person_education, person_country, person_sex, person_marital, person_industry]
+
+
 median_keys = []
 median_info = []
 median_colors = []
@@ -607,5 +607,9 @@ selected_df.plot.scatter(x=key_words[index_forX],
 plt.show()
 st.pyplot(fig)
 
-  
-
+name = "Median income for people with similar characteristics to you"
+st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
+table = {'Group':median_keys, 'Median income':median_info }
+df_table = pd.DataFrame(table)
+st.dataframe(df.style.apply(median_colors, axis=1))
+st.dataframe(df_table)
