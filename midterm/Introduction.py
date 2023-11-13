@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
 
-url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/adult_data.csv'
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/adult_data.csv'
 df_census = pd.read_csv(url)
 # fnlwgt is final weight, which is a weight of population percentage representation
 # they used 3 sets of controls. These are: A single cell estimate of the population 16+
