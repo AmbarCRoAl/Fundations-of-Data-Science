@@ -13,7 +13,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
-url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/adult_data.csv'
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/adult_data.csv'
 df_census = pd.read_csv(url)
 # fnlwgt is final weight, which is a weight of population percentage representation
 # they used 3 sets of controls. These are: A single cell estimate of the population 16+
@@ -289,7 +289,7 @@ population sees slightly higher capital gains in almost every age.
 
 
 
-url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/Post-tax%20household%20income%20summary_transverse.csv'
+url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/Post-tax%20household%20income%20summary_transverse.csv'
 df_summary = pd.read_csv(url)
 
 name = "Summary table with all the percentages and distributed capital gains and capital losses for the different groups"
