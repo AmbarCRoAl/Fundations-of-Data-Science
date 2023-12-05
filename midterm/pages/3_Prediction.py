@@ -1,4 +1,3 @@
-#GOAL: Determine weather a person is under or over earner based on their characteristics from the census data
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,6 +13,10 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/adult_data.csv'
 df_census = pd.read_csv(url)
+
+
+st.title("Can income level be epproximated with these characteristics?")
+#GOAL: Determine weather a person is under or over earner based on their characteristics from the census data
 
 
 #Cleaning data -------------------------------------------------------------------
@@ -78,8 +81,6 @@ score = accuracy_score(y_test, y_pred)
 
 
 #Webapp implementation -------------------------------------------------------------------
-
-st.title("Can income level be epproximated with these characteristics?")
 
 st.write("Accuracy of the model: ", score)
 
