@@ -3,6 +3,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
+import altair as alt
 
 url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/adult_data.csv'
 df_census = pd.read_csv(url)
@@ -600,11 +601,12 @@ for i in range(1, len(selected_cond)):
   n = ', ' + selected_cond[i] 
   name += n
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
-fig, ax = plt.subplots(figsize=[20,15])
-selected_df.plot.scatter(x=key_words[index_forX],
-      y='capital-gain', c='olivedrab', ax = ax)
-plt.show()
-st.pyplot(fig)
+
+st.pyplot(
+  alt.Chart(selected_df).mark_circle().encode(
+    x=key_words[index_forX],
+    y='capital-gain')
+         )
 
 
 
