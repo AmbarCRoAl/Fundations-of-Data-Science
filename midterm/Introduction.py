@@ -71,7 +71,7 @@ person_marital = st.selectbox("Marital status:",
         ['married', 'divorced', 'separated', 'widowed', 'never married'])
 kids = st.selectbox("Do you have kids?", 
         ['yes', 'no'])
-person_income = st.slider('Anual income:', min_value = 0, max_value = 1000000)
+person_income = st.slider('Anual income:', min_value = 0, max_value = 500000)
 st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
 
 st.markdown(''':red[Please complete every box to see the rest of the app.] ''')
