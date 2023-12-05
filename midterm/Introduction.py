@@ -594,20 +594,18 @@ if isinstance(percentage_highearners, str):
 else:
   st.write("Percentage of over-earners:", percentage_highearners*100)
 st.write("Amount of people with specified characteristics:", sum_all)
-#st.write(selected_df[key_words[index_forX]])
-#st.write(selected_df['capital-gain'])
+
 name = "Capital gains for people with the same: " + selected_cond[0]
 for i in range(1, len(selected_cond)):
   n = ', ' + selected_cond[i] 
   name += n
+
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
 brush = alt.selection_interval()
-
 fig = alt.Chart(selected_df).mark_circle().encode(
   x=key_words[index_forX],
   y='capital-gain'
-).add_params(
-    brush )
+).interactive()
 st.altair_chart(fig)
 
 
