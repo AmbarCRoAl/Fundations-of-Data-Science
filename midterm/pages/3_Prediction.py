@@ -42,7 +42,6 @@ marital_married = {'Married-civ-spouse':'Married', 'Married-spouse-absent':'Marr
 # Replace string values with corresponding values
 df1['countr'] = df1['countr'].replace(country_to_regions)
 df1['mariatl'] = df1['mariatl'].replace(marital_married)
-print('\n\nNew modified data frame shape and raw data:', df1.shape, '\n', df1.head(10))
 
 # Create encoder from string to integer and make all data numerical 
 for i in range(num_attributes):
@@ -58,7 +57,6 @@ for i in range(num_attributes):
 
 X = df1.iloc[:, :14]
 y = df1.iloc[:, -1]
-print("Selected X:\n", X, '\n\nSelected y:\n', y)
 
 start_state = 42     #integer of the amount of "shuffles" before splitting the data into train and test
 test_fraction = 0.2     #float for test percentage from data
