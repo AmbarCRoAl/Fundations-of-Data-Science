@@ -52,7 +52,7 @@ for i in range(num_attributes):
   label_encoder = LabelEncoder()
   integer_encoded = label_encoder.fit_transform(df1.iloc[:,i])
   string_to_integer_dict = {label: index for index, label in enumerate(label_encoder.classes_)}
-  df1.iloc[df1.columns[i]] = df1.iloc[df1.columns[i]].replace(string_to_integer_dict)
+  df1[df1.columns[i]] = df1[df1.columns[i]].replace(string_to_integer_dict)
 
 
 
