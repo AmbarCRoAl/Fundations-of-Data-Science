@@ -51,7 +51,7 @@ elif sd == "Working class and education":
         st.markdown(" * Capital losses for under-earners seems to slowly decreased in the previously mentioned order.")
   
 elif sd == "Region of origin":
-        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Country of origin</h1>", unsafe_allow_html=True) 
+        st.markdown("<h1 style='text-align: left; color: darkolivegreen;'> Region of origin</h1>", unsafe_allow_html=True) 
         st.subheader("Canada is the region with the highest amount of high earners, followed by Asia and then the US, while South America is the one at the bottom.")
         col1, col2 = st.columns([4.5,5.5])
         col1.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/country1.png')
@@ -62,7 +62,7 @@ elif sd == "Region of origin":
         col2.write("The highest distributed gains for over and under-earners were for people from Asia and Europe respectively.")
         col2.write("South America had the lowest values in every aspect, except in gains of under-earners, for which Canada had slightly less.")
         col2.write("Canada also had the highest losses for the under-earner population, with twice the amount of Asia (second highest losses).")
-        st.write("#### Note that this last graph had **two y-axes**. ")
+        st.write("#### Note that this last graph has **two y-axes**. ")
         st.write("This is because the distributed capital gains and losses are one order of magnitude different, so only scaling them to different axes would make it possible to view.")
         st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axis correspond to the capital gains for both over and under-earners, while the right axis corresponds to the capital losses.")
         st.write("We want to pint out that the here observed values are **NOT** representations of the whole continents of Asia, South America nor Europe. The data was reduced to these regions to make it more maneageable, but we do not have data for all the countries in these continents.")
@@ -80,7 +80,7 @@ elif sd == "Marital status":
         st.write("As for the distributed capital losses, there is almost a dirrect correlation to the capital gains. The only exceptions being over-earner divorced people going from 2nd to 4th and married under-earners going from 3rd to the lowest value, when looked at gains to losses.")
         st.write("Here is a graph containing the plots of distributed capital gains and capital losses.")
         st.image('https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/main/midterm/marital1.png')
-        st.write("#### Note that this last graph had **two y-axes**. ")
+        st.write("#### Note that this last graph has **two y-axes**. ")
         st.write("This is because the distributed capital gains from over-earners is an order of magnitude higher than any other capital fluctuation, so only scaling it to a different axis would make it possible to view.")
         st.write("The legends of the graphs are next to the corresponding axis it is scalled under. Here, the left axis correspond to the capital gains for both over and under-earners, while the right axis corresponds to the capital losses.")
         
