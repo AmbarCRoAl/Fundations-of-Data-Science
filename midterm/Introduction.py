@@ -58,8 +58,7 @@ We used the median income from 2022.
 
 # TEXT INPUT -------------------------------------------------------------------------------------
 st.markdown('#### Upload your info here:')
-person_age = st.text_input('Age:')
-st.markdown(''':gray[&emsp;Please enter an integer.] ''')
+person_age = st.slider('Age:', min_value = 1, max_value = 100)
 person_sex = st.selectbox("Sex/gender:", 
         ["woman", "man","none"])
 person_education = st.selectbox("Education level:", 
@@ -72,7 +71,7 @@ person_marital = st.selectbox("Marital status:",
         ['married', 'divorced', 'separated', 'widowed', 'never married'])
 kids = st.selectbox("Do you have kids?", 
         ['yes', 'no'])
-person_income = st.text_input('Anual income:')
+person_income = st.slider('Anual income:', min_value = 0, max_value = 1000000)
 st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
 
 st.markdown(''':red[Please complete every box to see the rest of the app.] ''')
