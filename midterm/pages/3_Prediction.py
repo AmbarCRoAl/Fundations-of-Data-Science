@@ -73,10 +73,19 @@ X_test_scaled = my_scaler.transform(X_test)     #scaling the input features for 
 my_classifier = LinearSVC(random_state=0)
 my_model = my_classifier.fit(X_train_scaled, y_train)
 y_pred = my_model.predict(X_test_scaled)
-# Calculate and print the accuracy score
+# Calculate the accuracy score
 score = accuracy_score(y_test, y_pred)
-print("Accuracy of the model: ", score)
+
+
+
+
+#Webapp implementation -------------------------------------------------------------------
+
+st.title("Can income level be epproximated with these characteristics?")
+
+st.write("Accuracy of the model: ", score)
 
 y_pred = my_model.predict(X_test_scaled)
 conf_mat = confusion_matrix(y_test, y_pred)
-ConfusionMatrixDisplay.from_estimator(my_classifier, X_test_scaled, y_test)
+fig = ConfusionMatrixDisplay.from_estimator(my_classifier, X_test_scaled, y_test)
+st.pyplot(fig.plot(cmap='viridis', values_format='d'))
