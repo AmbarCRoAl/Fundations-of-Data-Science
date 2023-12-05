@@ -601,10 +601,13 @@ for i in range(1, len(selected_cond)):
   n = ', ' + selected_cond[i] 
   name += n
 st.markdown(f"""  #### <span style="color:green">{name}</span>  """,  unsafe_allow_html=True)
+brush = alt.selection_interval()
+
 fig = alt.Chart(selected_df).mark_circle().encode(
   x=key_words[index_forX],
   y='capital-gain'
-)
+).add_params(
+    brush
 st.altair_chart(fig)
 
 
