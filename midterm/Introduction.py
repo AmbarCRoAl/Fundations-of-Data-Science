@@ -60,23 +60,23 @@ We used the median income from 2022.
 st.markdown('#### Upload your info here:')
 person_age = st.text_input('Age:')
 st.markdown(''':gray[&emsp;Please enter an integer.] ''')
-person_sex = st.text_input('Sex/Gender:')
-st.markdown(''':gray[&emsp;Please enter woman, man or none.] ''')
-person_education = st.text_input('Education level:')
-st.markdown(''':gray[&emsp;Please enter 'high school', 'some college', 'Bachelors', 'Masters', or 'Doctorate'.] ''')
-person_country = st.text_input('Country of origin:')
-st.markdown(''':gray[&emsp;Please enter US, Canada, Asia, South America or Europe.] ''')
-person_industry = st.text_input('Work sector:')
-st.markdown(''':gray[&emsp;Please enter 'self employed', 'incorporated self employed', 'private sector', 'state government' or &emsp;'federal goverment'.] ''')
-person_marital = st.text_input('Marital status:')
-st.markdown(''':gray[&emsp;Please enter married, divorced, separated, widowed or never married.] ''')
-kids = st.text_input('Do you have kids?')
-st.markdown(''':gray[&emsp;Please enter yes or no.] ''')
+person_sex = st.selectbox("Sex/gender:", 
+        ["woman", "man","none"])
+person_education = st.selectbox("Education level:", 
+        ['high school', 'some college', 'Bachelors', 'Masters', 'Doctorate'])
+person_country = st.selectbox("Country of origin:", 
+        ["US", 'Canada', "Asia", 'South America', 'Europe'])
+person_industry = st.selectbox("Work sector:", 
+        ['self employed', 'incorporated self employed', 'private sector', 'state government', 'federal goverment'])
+person_marital = st.selectbox("Marital status:", 
+        ['married', 'divorced', 'separated', 'widowed', 'never married'])
+kids = st.selectbox("Do you have kids?", 
+        ['yes', 'no'])
 person_income = st.text_input('Anual income:')
 st.markdown(''':gray[&emsp;Please enter your post-tax anual income without any symbol.] ''')
 
-st.markdown(''':red[Please complete every box to see the rest.] ''')
-st.markdown(''':red[Note that if you don't use the specific words provided, the information won't be displayed.] ''')
+st.markdown(''':red[Please complete every box to see the rest of the app.] ''')
+st.markdown(''':red[Note that until every option has been selected the information won't be displayed.] ''')
 
 
 
