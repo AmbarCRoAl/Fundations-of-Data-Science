@@ -85,7 +85,9 @@ score = accuracy_score(y_test, y_pred)
 
 st.write("Accuracy of the model: ", score)
 
-y_pred = my_model.predict(X_test_scaled)
+
 conf_mat = confusion_matrix(y_test, y_pred)
-fig = ConfusionMatrixDisplay.from_estimator(my_classifier, X_test_scaled, y_test)
-st.pyplot(fig.plot(cmap='viridis', values_format='d'))
+fig, ax = plt.subplots()
+disp = ConfusionMatrixDisplay(conf_mat, display_labels=df1.iloc[:, -1].unique())
+disp.plot(cmap='viridis', values_format='d', ax=ax)
+st.pyplot(fig)
