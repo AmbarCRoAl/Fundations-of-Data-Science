@@ -607,7 +607,7 @@ fig = alt.Chart(selected_df).mark_circle().encode(
   x=key_words[index_forX],
   y='capital-gain'
 ).add_params(
-    brush
+    brush )
 st.altair_chart(fig)
 
 
