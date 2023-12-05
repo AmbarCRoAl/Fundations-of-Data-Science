@@ -70,7 +70,7 @@ my_scaler.fit(X_train)     # y_train isn't used here because the scaler's purpos
 X_train_scaled = my_scaler.transform(X_train)     #scaling the input features for the train set
 X_test_scaled = my_scaler.transform(X_test)     #scaling the input features for the test set
 
-my_classifier = LinearSVC(random_state=0)
+my_classifier = LinearSVC(random_state=0, tol=0.1)
 my_model = my_classifier.fit(X_train_scaled, y_train)
 y_pred = my_model.predict(X_test_scaled)
 # Calculate the accuracy score
