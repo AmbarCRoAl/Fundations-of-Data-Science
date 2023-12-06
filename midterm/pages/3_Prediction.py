@@ -16,7 +16,7 @@ url = 'https://raw.githubusercontent.com/AmbarCRoAl/Fundations-of-Data-Science/m
 df_census = pd.read_csv(url)
 
 
-st.title("Can income level be epproximated with these characteristics?")
+st.title("Can income level be predicted from these characteristics?")
 #GOAL: Determine weather a person is under or over earner based on their characteristics from the census data
 
 
