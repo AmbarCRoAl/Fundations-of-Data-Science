@@ -42,18 +42,27 @@ country_to_regions = {'United-States': 'United_States', 'Cambodia': 'Asia',
                    'El-Salvador': 'South_America', 'Trinadad&Tobago': 'South_America',
                    'Peru': 'South_America', 'Hong': 'Asia', 'Holand-Netherlands': 'Europe' }
 marital_married = {'Married-civ-spouse':'Married', 'Married-spouse-absent':'Married', 'Married-AF-spouse':'Married'}
+education_dict = {'Preschool': 1, '1st-4th': 2, '5th-6th': 3, '7th-8th': 4, '9th': 5, '10th': 6,
+                  '11th': 7, '12th': 8, 'HS-grad': 9, 'Some-college': 10, 'Assoc-acdm': 11, 'Assoc-voc': 12,
+                  'Bachelors': 13, 'Masters': 14, 'Prof-school': 15, 'Doctorate': 16}
 
 # Replace string values with corresponding values
 df1['countr'] = df1['countr'].replace(country_to_regions)
 df1['mariatl'] = df1['mariatl'].replace(marital_married)
 
+#Dropping unnecessary columns
+df1 = df1.drop(['fnlwgt','education', 'occupation', 'relationship', 'capital-gain', 
+                'capital-loss', 'hours-per-week'], axis=1)
+
+string_to_int_dicts = []
 # Create encoder from string to integer and make all data numerical 
 for i in range(num_attributes):
   label_encoder = LabelEncoder()
   integer_encoded = label_encoder.fit_transform(df1.iloc[:,i])
   string_to_integer_dict = {label: index for index, label in enumerate(label_encoder.classes_)}
   df1[df1.columns[i]] = df1[df1.columns[i]].replace(string_to_integer_dict)
-
+  string_to_int_dicts.append(string_to_integer_dict)
+  
 
 
 
@@ -72,7 +81,7 @@ my_scaler.fit(X_train)     # y_train isn't used here because the scaler's purpos
 X_train_scaled = my_scaler.transform(X_train)     #scaling the input features for the train set
 X_test_scaled = my_scaler.transform(X_test)     #scaling the input features for the test set
 
-my_classifier = LinearSVC(random_state=0, tol=0.1)
+my_classifier = LinearSVC(random_state=0, tol=0.01)
 my_model = my_classifier.fit(X_train_scaled, y_train)
 y_pred = my_model.predict(X_test_scaled)
 # Calculate the accuracy score
@@ -91,3 +100,25 @@ fig, ax = plt.subplots()
 disp = ConfusionMatrixDisplay(conf_mat, display_labels=df1.iloc[:, -1].unique())
 disp.plot(cmap='viridis', values_format='d', ax=ax)
 st.pyplot(fig)
+
+#DUMMY VARIABLES; WILL CHANGE WITH ITERACTIVE BOX
+person_age = 28     #'Age:')
+person_sex = 'Male'     #'Sex/Gender:')
+person_education = 'HS-grad'     #'Education level:')
+person_industry = 'Private'     #'Work sector:')
+person_country = 'United_States'
+person_marital = 'Never-married'
+person_race = 'Other'
+#Changing the data into numeric
+person_education = education_dict.get(person_education, 0)  # Default to 0 if key is not found
+person_info = [person_age, person_industry, person_education, person_marital, person_race, person_sex, person_country]
+for i in range(len(string_to_int_dicts)-1):
+  person_info[i+1] = string_to_int_dicts[i].get(person_info[i+1], 0)
+
+x = [person_info]
+pred =  my_model.predict(x)
+if pred:
+  st.write("Our system predicts that you earn over $50,000 per year.")
+else:
+  st.write("Our system predicts that you earn less than $50,000 per year.")
+
