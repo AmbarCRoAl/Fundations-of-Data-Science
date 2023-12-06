@@ -101,14 +101,29 @@ disp = ConfusionMatrixDisplay(conf_mat, display_labels=df1.iloc[:, -1].unique())
 disp.plot(cmap='viridis', values_format='d', ax=ax)
 st.pyplot(fig)
 
-#DUMMY VARIABLES; WILL CHANGE WITH ITERACTIVE BOX
-person_age = 28     #'Age:')
-person_sex = 'Male'     #'Sex/Gender:')
-person_education = 'HS-grad'     #'Education level:')
-person_industry = 'Private'     #'Work sector:')
-person_country = 'United_States'
-person_marital = 'Never-married'
-person_race = 'Other'
+
+# TEXT INPUT -------------------------------------------------------------------------------------
+st.markdown('#### Upload your info here:')
+person_age = st.slider('Age:', min_value = 1, max_value = 100)
+person_sex = st.selectbox("Sex/gender:", 
+        ["Male", "Female"])
+person_education = st.selectbox("Education level:", 
+        ['1st-4th', '5th-6th', '7th-8th', '9th', '10th', '11th', '12th', 'Assoc-acdm', 'Assoc-voc', 'Bachelors', 
+         'Doctorate', 'HS-grad', 'Masters', 'Preschool', 'Prof-school', 'Some-college'])
+person_country = st.selectbox("Region of origin:", 
+        ['United_States', 'South_America', 'Asia', 'Europe', 'Canada', 'Other'])
+if person_industry == 'Other':
+  person_industry = '?'
+person_industry = st.selectbox("Work sector:", 
+        ['State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov', 'Other'])
+if person_industry == 'Other':
+  person_industry = '?'
+person_marital = st.selectbox("Marital status:", 
+        ['Never-married', 'Married', 'Divorced', 'Separated', 'Widowed'])
+person_race = st.selectbox("Race:", 
+        ['White', 'Black', 'Asian-Pac-Islander', 'Amer-Indian-Eskimo', 'Other'])
+
+
 #Changing the data into numeric
 person_education = education_dict.get(person_education, 0)  # Default to 0 if key is not found
 person_info = [person_age, person_industry, person_education, person_marital, person_race, person_sex, person_country]
