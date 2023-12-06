@@ -23,7 +23,7 @@ st.title("Can income level be predicted from these characteristics?")
 #Cleaning data -------------------------------------------------------------------
 
 df1 = df_census.copy()
-num_attributes = 15
+num_attributes = 8
 
 # Define a mapping dictionary to reduce amount of distinct values to make data more manegable
 # To get unique values in a column one should use: * unique_values = df1['mariatl'].unique() *
@@ -58,7 +58,7 @@ string_to_int_dicts = []
 # Create encoder from string to integer and make all data numerical 
 for i in range(num_attributes):
   label_encoder = LabelEncoder()
-  integer_encoded = label_encoder.fit_transform(df1.iloc[:,i])
+  integer_encoded = label_encoder.fit_transform(df1[df1.columns[i]])
   string_to_integer_dict = {label: index for index, label in enumerate(label_encoder.classes_)}
   df1[df1.columns[i]] = df1[df1.columns[i]].replace(string_to_integer_dict)
   string_to_int_dicts.append(string_to_integer_dict)
@@ -68,7 +68,7 @@ for i in range(num_attributes):
 
 #Creating model and testing -------------------------------------------------------------------
 
-X = df1.iloc[:, :14]
+X = df1.iloc[:, :7]
 y = df1.iloc[:, -1]
 
 start_state = 42     #integer of the amount of "shuffles" before splitting the data into train and test
