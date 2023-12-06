@@ -112,8 +112,8 @@ person_education = st.selectbox("Education level:",
          'Doctorate', 'HS-grad', 'Masters', 'Preschool', 'Prof-school', 'Some-college'])
 person_country = st.selectbox("Region of origin:", 
         ['United_States', 'South_America', 'Asia', 'Europe', 'Canada', 'Other'])
-if person_industry == 'Other':
-  person_industry = '?'
+if person_country == 'Other':
+  person_country = '?'
 person_industry = st.selectbox("Work sector:", 
         ['State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov', 'Other'])
 if person_industry == 'Other':
