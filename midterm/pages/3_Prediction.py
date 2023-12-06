@@ -56,11 +56,11 @@ df1 = df1.drop(['fnlwgt','education', 'occupation', 'relationship', 'capital-gai
 
 string_to_int_dicts = []
 # Create encoder from string to integer and make all data numerical 
-for i in range(num_attributes):
+for i in range(num_attributes-1):   #We skip the first column which is age
   label_encoder = LabelEncoder()
-  integer_encoded = label_encoder.fit_transform(df1[df1.columns[i]])
+  integer_encoded = label_encoder.fit_transform(df1[df1.columns[i+1]])
   string_to_integer_dict = {label: index for index, label in enumerate(label_encoder.classes_)}
-  df1[df1.columns[i]] = df1[df1.columns[i]].replace(string_to_integer_dict)
+  df1[df1.columns[i+1]] = df1[df1.columns[i+1]].replace(string_to_integer_dict)
   string_to_int_dicts.append(string_to_integer_dict)
   
 
