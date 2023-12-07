@@ -264,64 +264,6 @@ df1['income'] = df1['income'].replace(string_to_float_income)
 df1['countr'] = df1['countr'].replace(country_to_regions)
 df1['mariatl'] = df1['mariatl'].replace(marital_married)
 
-#Sum of fnlwgt for different types of attributes
-groups = ['f_under25', 'f_25to45', 'f_45to65', 'f_over65', 'm_under25',
-          'm_25to45', 'm_45to65', 'm_over65', 'Divorced', 'Never-married', 'Married',
-          'Separated', 'Widowed', 'HS-grad', 'Some-college', 'Bachelors', 'Masters',
-          'Doctorate','State-gov', 'Federal-gov',  'Private', 'Self-emp-not-inc', 'Self-emp-inc',
-          'United_States', 'South_America', 'Canada', 'Europe', 'Asia']
-num = len(groups)    #Number of attributes being studied; it will be used through out the rest of the code
-sum_of_people = np.zeros(num)   #how many people earns above 50k for each attribute
-sum_of_gains_over = np.zeros(num)     #how much was gain for people in the groups that earned over 50k
-sum_of_gains_under = np.zeros(num)    #how much was gain for people in the groups that earned under 50k
-sum_of_loss_over = np.zeros(num)     #how much was loss for people in the groups that earned over 50k
-sum_of_loss_under = np.zeros(num)    #how much was loss for people in the groups that earned under 50k
-
-sum_all_people = np.zeros(num)   #all the fnlwgt for each category, regardless weather or not they earned over 50K
-sum_all_counts = np.zeros(num)     #the number of counts for each category
-sum_all_over = np.zeros(num)     #the count of people who earned over 50K for each category
-
-for index, row in df1.iterrows():
-  sum_groups(row, 'fnlwgt', sum_all_people)
-  sum_groups(row, 'income', sum_all_over)
-  count(row, sum_all_counts)
-  if row['income']:
-    #print('\n\nFinal weight:\n', row['fnlwgt'])
-    # Sum the values in column B
-    sum_groups(row, 'fnlwgt', sum_of_people)
-    sum_groups(row, 'capital-loss', sum_of_loss_over)
-    sum_groups(row, 'capital-gain', sum_of_gains_over)
-  else:
-    sum_groups(row, 'capital-loss', sum_of_loss_under)
-    sum_groups(row, 'capital-gain', sum_of_gains_under)
-
-#Making ratios
-
-ratio_people = np.zeros(num)
-ratio_gain_over = np.zeros(num)
-ratio_gain_under = np.zeros(num)
-ratio_loss_over = np.zeros(num)
-ratio_loss_under = np.zeros(num)
-ratio_counts = np.zeros(num)
-
-for i in range(num):
-  if sum_all_people[i] == 0:
-    print('There was no person in the group ', groups[i], 'who earned over 50K in this dataframe')
-    ratio_people[i] = 0
-    ratio_gain_over[i] = 0
-    ratio_gain_under[i] = 0
-    ratio_loss_over[i] = 0
-    ratio_loss_under[i] = 0
-  else:
-    ratio_people[i] = sum_of_people[i]/sum_all_people[i] *100
-    ratio_gain_over[i] = sum_of_gains_over[i]/sum_all_people[i] *100
-    ratio_gain_under[i] = sum_of_gains_under[i]/sum_all_people[i] *100
-    ratio_loss_over[i] = sum_of_loss_over[i]/sum_all_people[i] *100
-    ratio_loss_under[i] = sum_of_loss_under[i]/sum_all_people[i] *100
-    ratio_counts[i] = sum_all_over[i]/sum_all_counts[i] *100
-
-
-
 
 
 
