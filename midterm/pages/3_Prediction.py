@@ -132,8 +132,8 @@ for i in range(len(string_to_int_dicts)-1):
 
 x = [person_info]
 pred =  my_model.predict(x)
-if pred == 1:
-  st.write("Our system predicts that you earn over $50,000 per year.")
+if pred[0] == 1:
+  st.markdown("Our system predicts that you earn **over** $50,000 per year.")
 else:
-  st.write("Our system predicts that you earn less than $50,000 per year.")
+  st.markdown("Our system predicts that you earn **less** than $50,000 per year.")
 
