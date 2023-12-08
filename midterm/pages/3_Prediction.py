@@ -110,7 +110,6 @@ Here is the process:
 More information about the results can be found bellow. 
 ''')
 st.write(f"Accuracy of the model: {score}", unsafe_allow_html=True)
-    print("<h1 style='font-size: 18px;'> Accuracy of the model: </h1>", score)
 
 # TEXT INPUT -------------------------------------------------------------------------------------
 st.markdown('#### Upload your info here:')
