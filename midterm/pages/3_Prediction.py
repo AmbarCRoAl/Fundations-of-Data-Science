@@ -143,7 +143,7 @@ Here is the process:
     giving the model the test data and counting the amount of correct predictions.
 More information about the results can be found bellow. 
 ''')
-st.write("####Accuracy of the model: ", score)
+st.write("####Accuracy of the model: ", score, unsafe_allow_html=True)
 with st.expander('What is Gradient Boosting?'):
   st.markdown('''
       "This algorithm builds an additive model in a forward stage-wise fashion; it allows for the optimization of 
