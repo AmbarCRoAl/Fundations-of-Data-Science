@@ -124,7 +124,7 @@ person_country = st.selectbox("Region of origin:",
 if person_country == 'Other':
   person_country = '?'
 person_industry = st.selectbox("Work sector:", 
-        ['State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov', 'Other'])
+        ['State-gov', 'Self-emp-inc', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov', 'Other'])
 if person_industry == 'Other':
   person_industry = '?'
 person_marital = st.selectbox("Marital status:", 
