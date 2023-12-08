@@ -440,6 +440,9 @@ with st.expander('See more'):
   include_zeros = st.selectbox('Do you want to include points in the data for 0 capital gain?', 
                                ['yes', 'no']) 
   # ------------------------------------------------------------------------------------------------
+
+  st.write("Variables from selection boxes:", index_forX, selected_cond, include_zeros)
+
   
   if index_forX == 'age':  
     index_forX = 1
