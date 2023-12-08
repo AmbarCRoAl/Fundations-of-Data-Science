@@ -441,9 +441,9 @@ with st.expander('See more'):
                                ['yes', 'no']) 
   # ------------------------------------------------------------------------------------------------
 
-  st.write("Variables from selection boxes:", index_forX, selected_cond, include_zeros)
+  if not selected_cond:
+    selected_cond = ['sex', 'mariatl', 'workclass']
 
-  
   if index_forX == 'age':  
     index_forX = 1
   if index_forX == 'education': 
