@@ -426,6 +426,10 @@ with st.expander('See more'):
   
   
   #MULTI-SELECTION BOX -----------------------------------------------------------------------------
+  index_forX = 2
+  selected_cond = ['age', 'countr', 'sex', 'mariatl', 'workclass']
+  include_zeros = 1 #This will be 1 when we want to include points with 0 gains/losses and 1 when we only want to see values !=0
+
   index_forX = st.selectbox(
       'Pick the value for the x-axis:',
       [ 'age', 'education', 'country', 'sex', 'marital', 'workclass'])
