@@ -42,7 +42,7 @@ st.write("Since some groups may simply have more people than others (for example
 
 st.divider()
 st.subheader('Want to see where you stand among the US population?')
-with st.expander('See more'):
+with st.expander('Plotting gains from similar people'):
   st.markdown(''' The interactive information given bellow is based on the data previously described and a summary table provided 
   by the US census webpage. There, the post-tax median income estimate and margin of error were provided for certain groups for the 
   years 2021 and 2022. This dataset is table B-1 at https://www.census.gov/data/tables/2023/demo/income-poverty/p60-279.html. 
