@@ -566,6 +566,5 @@ with st.expander('See more'):
           Color green: your earnings are over the median for this population''')
   })
 
-) #end for the expander for interactivity with user
   
 
