@@ -101,6 +101,16 @@ score = accuracy_score(y_test, y_pred)
 #CODE FOR WEB-APP IMPLEMENTATION --------------------------------------------------------------------------
 #*********************************************************************************************************
 
+st.markdown(''' 
+We've made a model with the data previously explored, using an algorithm from sklearn called Gradient Boosting Classifier.
+Here is the process: 
+  * We "shuffled" the data and splitted it into training and testing arrays.
+  * The model is given the training data, and after it has been trained, we meassure the level of accuracy by 
+    giving the model the test data and counting the amount of correct predictions.
+More information about the results can be found bellow. 
+''')
+st.write("<h1 style='font-size: 18px;'> Accuracy of the model: </h1>", score, unsafe_allow_html=True)
+
 # TEXT INPUT -------------------------------------------------------------------------------------
 st.markdown('#### Upload your info here:')
 person_age = st.slider('Age:', min_value = 1, max_value = 100)
@@ -135,15 +145,6 @@ pred =  my_model.predict(x)
 
 #PRESENT INFO TO USER -----------------------------------------------------------------
 
-st.markdown(''' 
-We've made a model with the data previously explored, using an algorithm from sklearn called Gradient Boosting Classifier.
-Here is the process: 
-  * We "shuffled" the data and splitted it into training and testing arrays.
-  * The model is given the training data, and after it has been trained, we meassure the level of accuracy by 
-    giving the model the test data and counting the amount of correct predictions.
-More information about the results can be found bellow. 
-''')
-st.write("####Accuracy of the model: ", score, unsafe_allow_html=True)
 with st.expander('What is Gradient Boosting?'):
   st.markdown('''
       "This algorithm builds an additive model in a forward stage-wise fashion; it allows for the optimization of 
