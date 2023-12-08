@@ -7,7 +7,7 @@ import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import LinearSVC
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
@@ -19,6 +19,13 @@ df_census = pd.read_csv(url)
 st.title("Can income level be predicted from these characteristics?")
 #GOAL: Determine weather a person is under or over earner based on their characteristics from the census data
 
+
+
+
+
+#*********************************************************************************************************
+#CODE TO GET STANDARD INFO OUT OF THE DATA ----------------------------------------------------------------
+#*********************************************************************************************************
 
 #Cleaning data -------------------------------------------------------------------
 
@@ -81,7 +88,7 @@ my_scaler.fit(X_train)     # y_train isn't used here because the scaler's purpos
 X_train_scaled = my_scaler.transform(X_train)     #scaling the input features for the train set
 X_test_scaled = my_scaler.transform(X_test)     #scaling the input features for the test set
 
-my_classifier = LinearSVC(random_state=0, tol=0.01)
+my_classifier = GradientBoostingClassifier(random_state=0)
 my_model = my_classifier.fit(X_train_scaled, y_train)
 y_pred = my_model.predict(X_test_scaled)
 # Calculate the accuracy score
@@ -90,17 +97,9 @@ score = accuracy_score(y_test, y_pred)
 
 
 
-#Webapp implementation -------------------------------------------------------------------
-
-st.write("Accuracy of the model: ", score)
-
-
-conf_mat = confusion_matrix(y_test, y_pred)
-fig, ax = plt.subplots()
-disp = ConfusionMatrixDisplay(conf_mat, display_labels=df1.iloc[:, -1].unique())
-disp.plot(cmap='viridis', values_format='d', ax=ax)
-st.pyplot(fig)
-
+#*********************************************************************************************************
+#CODE FOR WEB-APP IMPLEMENTATION --------------------------------------------------------------------------
+#*********************************************************************************************************
 
 # TEXT INPUT -------------------------------------------------------------------------------------
 st.markdown('#### Upload your info here:')
@@ -132,6 +131,39 @@ for i in range(len(string_to_int_dicts)-1):
 
 x = [person_info]
 pred =  my_model.predict(x)
+
+
+#PRESENT INFO TO USER -----------------------------------------------------------------
+
+st.markdown(''' 
+We've made a model with the data previously explored, using an algorithm from sklearn called Gradient Boosting Classifier.
+Here is the process: 
+  * We "shuffled" the data and splitted it into training and testing arrays.
+  * The model is given the training data, and after it has been trained, we meassure the level of accuracy by 
+    giving the model the test data and counting the amount of correct predictions.
+More information about the results can be found bellow. 
+''')
+st.write("####Accuracy of the model: ", score)
+with st.expander('What is Gradient Boosting?'):
+  st.markdown('''
+      "This algorithm builds an additive model in a forward stage-wise fashion; it allows for the optimization of 
+      arbitrary differentiable loss functions. In each stage n_classes_ regression trees are fit on the negative 
+      gradient of the loss function, e.g. binary or multiclass log loss. Binary classification is a special case 
+      where only a single regression tree is induced."
+
+      Source: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+  ''', unsafe_allow_html=True)
+  
+with st.expander('Results of predictions'):
+  st.markdown('''
+ 
+  ''', unsafe_allow_html=True)
+  conf_mat = confusion_matrix(y_test, y_pred)
+  fig, ax = plt.subplots()
+  disp = ConfusionMatrixDisplay(conf_mat, display_labels=df1.iloc[:, -1].unique())
+  disp.plot(cmap='viridis', values_format='d', ax=ax)
+  st.pyplot(fig)
+
 if pred[0] == 1:
   st.markdown("Our system predicts that you earn **over** $50,000 per year.")
 else:
