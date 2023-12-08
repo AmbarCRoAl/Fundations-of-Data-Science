@@ -17,6 +17,6 @@ The things that excite me most about the future are working in the development a
 }
 </style>
 '''
-)
+, unsafe_allow_html=True)
 
  
