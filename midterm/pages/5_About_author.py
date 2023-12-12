@@ -9,7 +9,7 @@ I'm a mother of a 4yo girl; we were both born and raised in Puerto Rico. We move
 Nuclear Physics.
 Throughout my studies, I've done research related to neural networks, accelerator measurements, design and commissioning of detection systems, 
 first principle calculations and material science. My Masters thesis aims to propose a system to perform electron elastic scattering off rare 
-isotopes at my university's accelerator complex; the Facility for Rare Isotope Beams. \n
+isotopes at my university's accelerator complex; the Facility for Rare Isotope Beams. 
 I like learning, and spending time with family and friends. 
 The things that excite me most about the future are working in the development and operation of nuclear power plants, and watching my daughter grow. 
 
